@@ -1,3 +1,9 @@
-<h1>Home</h1>
+<h1>Naked Cats</h1>
 
-<h2>Hello you are in the home.html template</h2>
+<div class="naked-cats">
+	<div class="naked-cat" ng-repeat="cat in cats">
+		<div class="cat-image" style="background: url({{cat.image}}) no-repeat center center;">
+		</div>
+		<h4>{{cat.name}}</h4>
+	</div>
+</div>	
