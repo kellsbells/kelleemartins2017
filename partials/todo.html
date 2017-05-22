@@ -1,19 +1,29 @@
 <h1>To Do App</h1>
 
-<div>
+<div class="to-do-view">
 	<h2>
-		You have {{getTotalTodos()}} To Dos total.
+		You have <span>{{getTotalTodos()}}</span> To Dos total.
 	</h2>
 
-	<div ng-repeat="todo in todos">
+	<div class="single-todo" ng-repeat="todo in todos">
 		<input type="checkbox" ng-model="todo.done">
 		<span class="done-{{todo.done}}">{{todo.text}}</span>
 	</div>
 
-	<form>
-		<input type="text" ng-model="formTodoText" ng-model-instant>
+	<form name="addToDo" novalidate>
+		<div class="form-group">	
+
+			<input name="todotext" type="text" ng-model="formTodoText" placeholder="Add a New To Do" required>
+		
+			<p ng-show="addToDo.todotext.$invalid && !addToDo.todotext.$pristine" class="help-block">Enter a valid To Do item.</p>
+
+		</div>	
+
 		<button class="btn" ng-click="addTodo()">Add</button>
+
 	</form>
 
-	<button ng-click="clearCompleted">Clear Completed</button>
+
+
+	<button class="clear-completed" ng-click="clearCompleted">Clear Completed</button>
 </div>
