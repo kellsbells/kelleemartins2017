@@ -1,12 +1,21 @@
 <nav class="navbar" role="navigation">
-    <div class="container">
-        <div>
+
+    <div class="hamburger-helper"  ng-click="toggle = !toggle" ng-class="{'is-active' : toggle}">
+        <div class="hamburger" id="hamburger-6">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div> 
+        <nav>
             <ul>
                 <li><a href="#/">Home</a>
                 </li>
                 <li><a href="#/todo">To-Do App</a>
                 </li>
             </ul>
-        </div>
+        </nav>
     </div>
+
+
+    
 </nav>

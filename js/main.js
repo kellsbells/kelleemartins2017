@@ -2,7 +2,7 @@
 * Main AngularJS Web Application
 */
 
-var app = angular.module('industryInnovators', ['ngRoute']);
+var app = angular.module('kelleeMartins', ['ngRoute']);
 
 
 
@@ -11,14 +11,15 @@ var app = angular.module('industryInnovators', ['ngRoute']);
  */
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
-    // Home
-    .when("/", {templateUrl: "partials/home.html", controller: "CatController"})
-    .when("/todo", {templateUrl: "partials/todo.html", controller: "TodoCtrl"})
+    .when("/", {templateUrl: "partials/portfolio.html", controller: "ProjectController"})
+    .when("/about", {templateUrl: "partials/todo.html", controller: "TodoCtrl"})
+    .when("/contact", {templateUrl: "partials/todo.html", controller: "TodoCtrl"})
 }]);
 
 
-app.controller('CatController', ['$scope', function($scope) {
-	$scope.cats = [
+app.controller('ProjectController', ['$scope', function($scope) {
+
+	$scope.projects = [
 		{
 			name: 'Fluffy',
 			image: 'http://cdn2-www.webecoist.momtastic.com/assets/uploads/2010/02/sphynx_cats_8x.jpg'
@@ -56,31 +57,15 @@ app.controller('CatController', ['$scope', function($scope) {
 			image: 'https://featuredcreature.com/wp-content/uploads/2011/12/DSC_0156.jpg'
 		},
 	];
-}]);
 
 
-app.controller('TodoCtrl', ['$scope', function($scope) {
-	
-
-	$scope.todos = [
-		{ text: 'Learn AngularJs', done: false },
-		{ text: 'Feed the dogs', done: false },
-	];
-
-	$scope.getTotalTodos = function() {
-		return $scope.todos.length;
-	}
-
-	$scope.addTodo = function() {
+	$scope.toggleHamburger = function() {
 		if($scope.addToDo.$valid) {
 			$scope.todos.push({text:$scope.formTodoText, done:false});
 			$scope.formTodoText = '';
 		}
 	}
 
-	$scope.clearCompleted = function() {
-		$scope.todos =_.filter($Scope.todos, function(todo) {
-			return !todo.done;
-		})
-	}
+	$scope.toggle = false;
+
 }]);

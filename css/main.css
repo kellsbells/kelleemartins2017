@@ -1,177 +1,85 @@
 body {
-	font-family: 'Didact Gothic', sans-serif;
+	background-color: lightgrey;
 }
 
-.container {
-	max-width: 1000px;
-	margin: 0 auto;
-	clear: both;
+.site-content {
+	max-width: 1200px;
+	width: 90%;
+	background-color: lightblue;
+	margin: 60px auto;
+	height: 100vh;
+	border-radius: 8px;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-
-nav {
-	background-color: #00bcd4;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	-webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5);
-	-moz-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5);
-	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5);
+.hamburger-helper {
+	text-align: right;
 }
 
-nav ul {
-	display: flex;
-	justify-content: center;
+.hamburger .line {
+  	width: 40px;
+  	height: 5px;
+  	background-color: pink;
+  	display: block;
+  	margin: 4px auto;
+  	-webkit-transition: all 0.2s ease-in-out;
+  	-o-transition: all 0.2s ease-in-out;
+  	transition: all 0.2s ease-in-out;
 }
 
-nav li {
-	list-style-type: none;
+.hamburger:hover {
+	cursor: pointer;
 }
 
-nav li a {
-	text-decoration: none;
-	padding: 10px 20px;
-	color: white;
+/* SIX */
+
+.hamburger-helper.is-active #hamburger-6 {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition-delay: 0.6s;
+  -o-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
-nav li a:hover {
-	color: #FF1493;
+.hamburger-helper.is-active #hamburger-6 .line:nth-child(2){
+  	width: 0px;
 }
 
-footer {
-	background-color: #00bcd4;
-	position: fixed;
-	width: 100%;
-	bottom: 0;
-	left: 0;
-	text-align: center;
-	-webkit-box-shadow: 0px -1px 1px 0px rgba(0,0,0,0.5);
-	-moz-box-shadow: 0px -1px 1px 0px rgba(0,0,0,0.5);
-	box-shadow: 0px -1px 1px 0px rgba(0,0,0,0.5);
+.hamburger-helper.is-active #hamburger-6 .line:nth-child(1),
+.hamburger-helper.is-active #hamburger-6 .line:nth-child(3){
+  	-webkit-transition-delay: 0.3s;
+  	-o-transition-delay: 0.3s;
+  	transition-delay: 0.3s;
 }
 
-footer a {
-	text-decoration: none;
-	color: white;
-	font-size: 12px;
+.hamburger-helper.is-active #hamburger-6 .line:nth-child(1){
+  	-webkit-transform: translateY(5px);
+  	-ms-transform: translateY(5px);
+  	-o-transform: translateY(5px);
+  	transform: translateY(5px);
 }
 
-main {
-	padding: 100px 0;
-}
-
-h1 {
-	color: #FF1493;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	padding-bottom: 20px;
-	font-size: 40px;
-}
-
-.naked-cats {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.naked-cat {
-	width: 33%;
-	padding-bottom: 20px;
-}
-
-.naked-cat:hover h4 {
-	color: #00bcd4;
-}
-
-.naked-cat:hover .cat-image {
-	border-color: #00bcd4;
-}
-
-h4 {
-	padding-top: 10px;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 14px;
-	color: #FF1493;
-	transition: all 200ms linear;
-}
-
-.cat-image {
-	height: 300px;
-	width: 300px;
-	border: 4px solid #FF1493;
-	transition: all 200ms linear;
+.hamburger-helper.is-active #hamburger-6 .line:nth-child(3){
+  	-webkit-transform: translateY(-13px) rotate(90deg);
+  	-ms-transform: translateY(-13px) rotate(90deg);
+  	-o-transform: translateY(-13px) rotate(90deg);
+  	transform: translateY(-13px) rotate(90deg);
 }
 
 
-h2 {
-	color: #00bcd4;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	padding-bottom: 20px;
-	font-size: 30px;
+.hamburger-helper nav {
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 600ms ease-in-out;
 }
 
-h2 span {
-	color: #FF1493;
-}
-
-.single-todo {
-	font-size: 20px;
-	padding: 10px 0;
-}
-
-.single-todo input {
-	font-size: 20px;
-}
-
-.to-do-view form {
-	font-size: 0;
-	padding: 20px 0;
-}
-
-.to-do-view form input {
-	font-size: 18px;
-	border: 1px solid #FF1493;
-	border-right: 0;
-	padding: 8px;
+.hamburger-helper.is-active nav {
+  max-height: 400px;
 }
 
 
-.to-do-view form input:focus {
-	outline: 0;
-}
-
-button {
-	background-color: #00bcd4;
-	font-size: 16px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	padding: 8.5px 20px;
-	color: white;
-	outline: 0;
-	border: 0;
-	transition: all 200ms linear;
-	border: 2px solid #00bcd4;
-	vertical-align: top;
-}
-
-button:hover {
-	background-color: #FF1493;
-	border-color: #FF1493;
-}
-
-.clear-completed {
-	margin-top: 40px;
-}
-
-.help-block {
-	font-size: 14px;
-}
-
-.done-true {
-	color: grey;
-	text-decoration: line-through;
-}

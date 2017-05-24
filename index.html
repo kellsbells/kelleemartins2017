@@ -3,13 +3,13 @@
 <head>
 
 	<!-- Meta-Information -->
-    <title>Industry Innovator</title>
+    <title>Kellee Martins - Web Developer</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="ACME Inc.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Our Website CSS Styles -->
+	<!-- Website CSS Styles -->
 	<link rel="stylesheet" href="css/main.css">
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
@@ -21,18 +21,21 @@
 
 </head>
 
-<body ng-app="industryInnovators">
-	<!-- Our Website Content Goes Here -->
-	<div ng-include='"templates/header.html"'></div>
-	
-	<main class="container">
-		<div ng-view></div>
-	</main>	
+<body ng-app="kelleeMartins">
 
-	<div ng-include='"templates/footer.html"'></div>
+	<div class="site-content">
 
+		<div ng-include='"templates/header.html"'></div>
+		
+		<main class="container">
+			<div ng-view></div>
+		</main>	
 
-	<!-- Our Website Javascripts -->
+		<div ng-include='"templates/footer.html"'></div>
+
+	</div>	
+
+	<!-- Website Javascripts -->
 	<script src="js/main.js"></script>
 </body>
 </html>
