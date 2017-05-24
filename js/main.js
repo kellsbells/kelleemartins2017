@@ -17,6 +17,18 @@ app.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 
+app.controller('SocialController', ['$scope', function($scope) {
+	$scope.socials = [
+		{
+			name: 'kellee', 
+		},
+		{
+			name: 'dawn', 
+		},
+	]
+}]);
+
+
 app.controller('ProjectController', ['$scope', function($scope) {
 
 	$scope.projects = [

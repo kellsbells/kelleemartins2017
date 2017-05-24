@@ -14,6 +14,11 @@
                 </li>
             </ul>
         </nav>
+        <div class="social" ng-controller="SocialController">
+            <div class="single-social" ng-repeat="social in socials">
+                <h1>{{social.name}}</h1>
+            </div>
+        </div>
     </div>
 
 
