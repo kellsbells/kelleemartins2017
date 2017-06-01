@@ -2,19 +2,7 @@
 * Main AngularJS Web Application
 */
 
-var app = angular.module('kelleeMartins', ['ngRoute']);
-
-
-
-/**
- * Configure the Routes
- */
-app.config(['$routeProvider', function ($routeProvider) {
-  $routeProvider
-    .when("/", {templateUrl: "partials/portfolio.html", controller: "ProjectController"})
-    .when("/about", {templateUrl: "partials/todo.html", controller: "TodoCtrl"})
-    .when("/contact", {templateUrl: "partials/todo.html", controller: "TodoCtrl"})
-}]);
+var app = angular.module('kelleeMartins', []);
 
 
 app.controller('SocialController', ['$scope', function($scope) {
@@ -69,15 +57,5 @@ app.controller('ProjectController', ['$scope', function($scope) {
 			image: 'https://featuredcreature.com/wp-content/uploads/2011/12/DSC_0156.jpg'
 		},
 	];
-
-
-	$scope.toggleHamburger = function() {
-		if($scope.addToDo.$valid) {
-			$scope.todos.push({text:$scope.formTodoText, done:false});
-			$scope.formTodoText = '';
-		}
-	}
-
-	$scope.toggle = false;
 
 }]);

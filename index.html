@@ -26,10 +26,26 @@
 	<div class="site-content">
 
 		<div ng-include='"templates/header.html"'></div>
+
+
 		
-		<main class="container">
-			<div ng-view></div>
+		<main class="main-container">
+
+			<div class="hero">
+				<div ng-include='"partials/hero.html"'></div>
+			</div>
+
+			<div class="sidebar">
+				<div ng-include='"partials/sidebar.html"'></div>
+			</div>
+
+			<div class="projects" ng-controller="ProjectController">
+				<div ng-include='"partials/projects.html"'></div>
+			</div>
+			
 		</main>	
+
+		
 
 		<div ng-include='"templates/footer.html"'></div>
 
