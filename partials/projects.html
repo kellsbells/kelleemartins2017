@@ -1,60 +1,24 @@
-<div class="projects-view">
-	<h1>Naked Cats</h1>
+<div class="projects-view gradient">
+	<h1>Hello?</h1>
 	<div class="naked-cats">
 		<div class="naked-cat" ng-repeat="project in projects">
-			<div class="cat-image" style="background: url({{project.image}}) no-repeat center center;">
+			<div class="modal-frame">
+			  <div class="modal">
+					<div class="modal-inset">
+			      		<div class="button close"><i class="fa fa-close"></i>
+			      		</div>
+				
+			      		<div class="modal-body">
+							<h3>Such Modal, Much Animate!</h3>
+			        		<p>Nothing groundbreaking, but I hope you enjoyed <br /> the physics for the open/close animation =).</p>
+			      		</div>
+			    	</div>
+			  	</div>
 			</div>
-			<h4>{{project.name}}</h4>
-		</div>
-		<div class="naked-cat" ng-repeat="project in projects">
-			<div class="cat-image" style="background: url({{project.image}}) no-repeat center center;">
-			</div>
-			<h4>{{project.name}}</h4>
-		</div>
-		<div class="naked-cat" ng-repeat="project in projects">
-			<div class="cat-image" style="background: url({{project.image}}) no-repeat center center;">
-			</div>
-			<h4>{{project.name}}</h4>
-		</div>
-		<div class="naked-cat" ng-repeat="project in projects">
-			<div class="cat-image" style="background: url({{project.image}}) no-repeat center center;">
-			</div>
-			<h4>{{project.name}}</h4>
-		</div>
-		<div class="naked-cat" ng-repeat="project in projects">
-			<div class="cat-image" style="background: url({{project.image}}) no-repeat center center;">
-			</div>
-			<h4>{{project.name}}</h4>
-		</div>
-		<div class="naked-cat" ng-repeat="project in projects">
-			<div class="cat-image" style="background: url({{project.image}}) no-repeat center center;">
-			</div>
-			<h4>{{project.name}}</h4>
-		</div>
-		<div class="naked-cat" ng-repeat="project in projects">
-			<div class="cat-image" style="background: url({{project.image}}) no-repeat center center;">
-			</div>
-			<h4>{{project.name}}</h4>
-		</div>
-		<div class="naked-cat" ng-repeat="project in projects">
-			<div class="cat-image" style="background: url({{project.image}}) no-repeat center center;">
-			</div>
-			<h4>{{project.name}}</h4>
-		</div>
-		<div class="naked-cat" ng-repeat="project in projects">
-			<div class="cat-image" style="background: url({{project.image}}) no-repeat center center;">
-			</div>
-			<h4>{{project.name}}</h4>
-		</div>
-		<div class="naked-cat" ng-repeat="project in projects">
-			<div class="cat-image" style="background: url({{project.image}}) no-repeat center center;">
-			</div>
-			<h4>{{project.name}}</h4>
-		</div>
-		<div class="naked-cat" ng-repeat="project in projects">
-			<div class="cat-image" style="background: url({{project.image}}) no-repeat center center;">
-			</div>
-			<h4>{{project.name}}</h4>
+			<div class="modal-overlay"></div>
+
+
+			<button class="fancy-btn open">{{project.name}}</button>		
 		</div>
 	</div>	
 </div>	

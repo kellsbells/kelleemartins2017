@@ -13,7 +13,9 @@
 	<link rel="stylesheet" href="css/main.css">
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
-
+	
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<!-- AngularJS 1.2 Library -->
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
 	<!-- Angular Route -->
@@ -39,7 +41,7 @@
 				<div ng-include='"partials/sidebar.html"'></div>
 			</div>
 
-			<div class="projects" ng-controller="ProjectController">
+			<div class="projects" ng-controller="ProjectController" ng-init="background(); module()">
 				<div ng-include='"partials/projects.html"'></div>
 			</div>
 			
