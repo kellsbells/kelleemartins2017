@@ -17,7 +17,7 @@ app.controller('SocialController', ['$scope', function($scope) {
 }]);
 
 
-app.controller('ProjectController', ['$scope', function($scope) {
+app.controller('ProjectController', ['$scope', function($scope, $mdDialog) {
 	$scope.projects = [
 		{
 			name: 'Fluffy',
@@ -123,29 +123,5 @@ app.controller('ProjectController', ['$scope', function($scope) {
 		setInterval(updateGradient,10);
 	};
 
-
-	$scope.module = function() {
-		console.log('hello');
-		$modal = $('.modal-frame');
-		$overlay = $('.modal-overlay');
-
-		/* Need this to clear out the keyframe classes so they dont clash with each other between ener/leave. Cheers. */
-		$modal.bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
-		  if($modal.hasClass('state-leave')) {
-		    $modal.removeClass('state-leave');
-		  }
-		});
-
-		$('.close').on('click', function(){
-		  $overlay.removeClass('state-show');
-		  $modal.removeClass('state-appear').addClass('state-leave');
-		});
-
-		$('.open').on('click', function(){
-			alert('I have been opened');
-		  $overlay.addClass('state-show');
-		  $modal.removeClass('state-leave').addClass('state-appear');
-		});
-	};
-
 }]);
+

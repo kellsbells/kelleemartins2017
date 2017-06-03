@@ -18,8 +18,6 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<!-- AngularJS 1.2 Library -->
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
-	<!-- Angular Route -->
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script></span>
 
 </head>
 
@@ -41,7 +39,7 @@
 				<div ng-include='"partials/sidebar.html"'></div>
 			</div>
 
-			<div class="projects" ng-controller="ProjectController" ng-init="background(); module()">
+			<div class="projects" ng-controller="ProjectController" ng-init="background();">
 				<div ng-include='"partials/projects.html"'></div>
 			</div>
 			
