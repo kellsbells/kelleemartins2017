@@ -17,44 +17,95 @@ app.controller('SocialController', ['$scope', function($scope) {
 }]);
 
 
-app.controller('ProjectController', ['$scope', function($scope, $mdDialog) {
+app.controller('ProjectController', ['$scope', function($scope) {
+	$scope.test = 'hello';
 	$scope.projects = [
 		{
-			name: 'Fluffy',
-			image: 'http://cdn2-www.webecoist.momtastic.com/assets/uploads/2010/02/sphynx_cats_8x.jpg'
+			name: 'Adidas',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2016/07/adidas.jpg',
+			text: '<div><p><img class="size-medium wp-image-123 alignnone" src="http://kelleemartins.com/wp-content/uploads/2016/07/ad-F2-300x276.jpg" alt="ad-F2" width="300" height="276"></p><p>quick turn around<br>fun<br>360</p><p><img class="alignnone size-medium wp-image-122" src="http://kelleemartins.com/wp-content/uploads/2016/07/ad-F3-300x174.jpg" alt="ad-F3" width="300" height="174" srcset="http://kelleemartins.com/wp-content/uploads/2016/07/ad-F3-300x174.jpg 300w, http://kelleemartins.com/wp-content/uploads/2016/07/ad-F3-1024x595.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px"></p></div>',
+			havLink: false,
+			link: '',
 		},
 		{
-			name: 'Sir Nakey',
-			image: 'https://qph.ec.quoracdn.net/main-qimg-4df06f1cfecbaed943e664531d52494f-c'
+			name: 'AWAL',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2016/04/awal.png',
+			text: '<div><p>When this project was first being discussed, I liked the design so much that I asked to be the lead on this project. I was really excited about this and finally getting the hang of a WordPress site from start to finish. As much as I love working with a group, it’s just so neat to know a project inside and out. This site became one of my babies and I learned SO much in the process of building it.</p><p>This design was actually done out of house and wasn’t as explicit in its functionality as I would have hoped for. Inferring what the client wanted, and deciding what was actually in scope of the original contract was probably my least favorite part of this job. I want to make a product that the client LOVES but I also want to make my project managers happy and stay within scope and budget.&nbsp;This is a constant industry battle, but this really showed to me how important it is to communicate often and clearly! Being an extrovert and coming into this industry I certainly didn’t anticipate that I would need to cultivate my communication skills, but they really take work and practice and it’s been a huge focus of mine.</p><p>The concept of the background images for this site was what initially intrigued me. They wanted the capability&nbsp;to upload a group of images and for the images to randomly shuffle behind a color filter that was determined by the content. I used CMB2 throughout the site. All of the content is completely customizable on the admin side. I also added Site Options which&nbsp;allow the user to upload a group of images that they want to be in the background. On page load, the images are pulled into a hidden div. Next,&nbsp;a random image is pulled and then used as the background image. Getting this to work, and to work quickly was one of my bigger struggles on this site. It also highlights my biggest mistake on the site. On my staging site I got my load time down and running super slick. But what I failed to do was put a limit on the photo sizes and force compression. On my staging site, all the images were optimized and compressed. Even though I instructed the user to compress their images and to not exceed a certain size, I didn’t enforce it in my code. Unfortunately, they ignored my instructions and the live site is super slow. I can’t even look at the live site without a face palm. But lesson learned, I’ll never again leave it up to the client to upload the correctly sized and compressed image.</p></div>',
+			havLink: true,
+			link: 'https://awal.com/',
 		},
 		{
-			name: 'Pantless',
-			image: 'https://featuredcreature.com/wp-content/uploads/2011/12/DSC_0156.jpg'
+			name: 'BlueStar Cooking',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2016/04/bluestar.png',
+			text: '<div><p>Although my co-workers might disagree, I really enjoyed working on BlueStar! I was on the project from the very beginning which means I knew it inside out. That’s always an enjoyable experience, really makes you feel like you have a handle on things. I started off by building out the templates using HTML, CSS, and JavaScript. Then I brought in CMB2 to handle the custom content and implemented custom post types to handle different products and gallery images. This is actually a pretty common flow in my projects. But each time I get faster, more modular, more thorough, and gain a more complete understanding of the tools and techniques I’m using.</p></div>',
+			havLink: true,
+			link: 'https://www.bluestarcooking.com/',
 		},
 		{
-			name: 'Selena Gomez',
-			image: 'https://pbs.twimg.com/profile_images/586008601258405888/XggTWhbR.jpg'
+			name: 'Boppy',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2017/04/Screen-Shot-2017-04-09-at-9.56.01-AM.png',
+			text: '<div><p>Cookie</p></div>',
+			havLink: true,
+			link: 'http://www.boppy.com/',
 		},
 		{
-			name: 'Stimpy',
-			image: 'http://hairlesscatblog.com/wp-content/uploads/2013/03/canadian-hairless-cat-for-sale.jpg'
+			name: 'ClearChoice',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2016/04/clearchoice.jpg',
+			text: '<div><p>-Ongoing work-Correcting own code-Time estimates-Restructured entire site into modules and page builder.</p></div>',
+			havLink: true,
+			link: 'https://www.clearchoice.com/',
 		},
 		{
-			name: 'Fabio',
-			image: 'https://s-media-cache-ak0.pinimg.com/736x/80/df/37/80df374b87514c44651ff78330537dca.jpg'
+			name: 'FjallRaven',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2016/04/fjallraven.png',
+			text: '<div><p>This project was my first exposure to Shopify and Liquid. I specifically built out the locations page and the current footer. Although, I’ve done little edits throughout the site.</p></div>',
+			havLink: true,
+			link: 'https://www.clearchoice.com/',
 		},
 		{
-			name: 'Fluffy',
-			image: 'http://cdn2-www.webecoist.momtastic.com/assets/uploads/2010/02/sphynx_cats_8x.jpg'
+			name: 'Friday Playlists – Voltage Ad',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2016/07/voltageplaylist.jpg',
+			text: '<div><p></p></div>',
+			havLink: true,
+			link: 'http://friday.voltagead.com/',
 		},
 		{
-			name: 'Sir Nakey',
-			image: 'https://qph.ec.quoracdn.net/main-qimg-4df06f1cfecbaed943e664531d52494f-c'
+			name: 'Hansen Orthodontics',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2017/04/Screen-Shot-2017-04-09-at-10.18.19-AM.png',
+			text: '<div><p>Hansen Ortho was my first start to end project with my Zenman team. The entire site is actually constructed using Advanced Custom Field modules which allows the user to add multiple sections to create pages. The flexibility is amazing but making sure these modules worked in any combination on any page proved to be quite tricky.<br>I had quite a few modules that required a YouTube embed. This would break though if you had two embed modules on a page or even if a repeater within one module included a row that contained a YT embed. The YouTube API requires a unique ID that needed to be generated from each module and each row within each module. In each module file I create a random string that makes each module unique:<br><script src="https://gist.github.com/kellsbells/383b7b10bfc04428b824d5542a498628.js"></script><br>I then had to make each row within that module unique. I did by setting up a simple row counter:<br><script src="https://gist.github.com/kellsbells/c7e91dafcbe7cc047b751e45faf786b6.js"></script><br>In my JavaScript I then had to build an array of all the embeds for the YT API to map through and consume. I included some data attribute that can be set in the WP-Admin that dictate loop, autoplay and mute.<br><script src="https://gist.github.com/kellsbells/e36a6898bdeb3db8415bdffc235dfc32.js"></script></p></div>',
+			havLink: true,
+			link: 'http://www.bracesbydrhansen.com/',
 		},
 		{
-			name: 'Pantless',
-			image: 'https://featuredcreature.com/wp-content/uploads/2011/12/DSC_0156.jpg'
+			name: 'Pagosa Springs Medical Center',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2016/04/pagosasprings.png',
+			text: '<div><p>-Wordpress-Difficult Responsive Design-Dropdown-Link to website-Cookie-Sorting providers</p></div>',
+			havLink: true,
+			link: 'http://pagosaspringsmedicalcenter.org/',
 		},
+		{
+			name: 'PlayerLync',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2017/04/Screen-Shot-2017-04-09-at-10.09.30-AM.png',
+			text: '<div><p>-Wordpress-Difficult Responsive Design-Dropdown-Link to website-Cookie-Sorting providers</p></div>',
+			havLink: true,
+			link: 'https://www.playerlync.com/',
+		},
+		{
+			name: 'Proctor Productions',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2017/04/Screen-Shot-2017-04-09-at-10.00.45-AM.png',
+			text: '<div><p>-nav-blog</p></div>',
+			havLink: true,
+			link: 'http://www.proctorproductions.com/',
+		},
+		{
+			name: 'Reebok',
+			heroImage: 'http://kelleemartins.com/wp-content/uploads/2016/04/reebok.png',
+			text: '<div><p><img class="alignnone size-medium wp-image-121" src="http://kelleemartins.com/wp-content/uploads/2016/07/jj-watt-desktop-new-2-123x300.jpg" alt="jj-watt-desktop-new-2" width="123" height="300" />-Bra Finder-Link Farm-lots of crazy code</p></div>',
+			havLink: true,
+			link: 'http://www.reebok.com/us/women-sports_bras',
+		},
+
+		
 	];
 
 
@@ -64,9 +115,9 @@ app.controller('ProjectController', ['$scope', function($scope, $mdDialog) {
 		  [62,35,255],
 		  [60,255,60],
 		  [255,35,98],
-		  [45,175,230],
-		  [255,0,255],
-		  [255,128,0]
+		  [62,35,255],
+		  [60,255,60],
+		  [255,35,98]
 		);
 
 
@@ -123,5 +174,36 @@ app.controller('ProjectController', ['$scope', function($scope, $mdDialog) {
 		setInterval(updateGradient,10);
 	};
 
+
+	var logId = 0;
+	$scope.testLines = [];
+	for (var i = 20; i >= 0; i--) {
+		$scope.testLines.push(i);
+	};
+	$scope.inviewLogs = [];
+	$scope.lineInView = function(index, inview, inviewpart) {
+		console.log(index);
+		console.log(inview);
+		console.log(inviewpart);
+	};
+
 }]);
 
+
+app.directive('inViewport', function($window) {
+    return {
+      	scope: {
+        	scroll:'=scrollPosition'
+    	},
+    	link: function(scope, element, attrs) {
+    	  	var windowEl = angular.element($window);
+    	  	var handler = function() {
+    	  	    console.log($window.scrollY);
+    	  	  	scope.scroll = windowEl.scrollTop;
+    	  	}
+    	  	console.log(windowEl);
+    	  	//windowEl.on('scroll', scope.$apply.bind(scope, handler));
+    	  	handler();
+    	}
+    };
+});

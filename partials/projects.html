@@ -1,3 +1,12 @@
-<div class="gradient">
-	<h2>Projects</h2>
+<div class="projects-view">
+	<div class="container">
+		<h2>Projects</h2>
+		<div class="projects-view__wrapper">
+			<div class="projects-view__single" ng-repeat="project in projects">
+				<div class="projects-view__image"  style="background: url('{{project.heroImage}}') no-repeat center center; background-size: cover;"></div>
+				<div class="projects-view__overlay"></div>
+				<div class="projects-view__content">{{project.name}}</div>
+			</div>
+		</div>	
+	</div>
 </div>
