@@ -113,10 +113,10 @@ app.controller('ProjectController', ['$scope', function($scope) {
 
 		var colors = new Array(
 		  [62,35,255],
-		  [60,255,60],
 		  [255,35,98],
 		  [62,35,255],
-		  [60,255,60],
+		  [255,35,98],
+		  [62,35,255],
 		  [255,35,98]
 		);
 
