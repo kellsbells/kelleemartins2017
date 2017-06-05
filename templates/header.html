@@ -1,13 +1,13 @@
 <nav class="navigation">
 	<div class="container">
-		<div class="navigation__logo">
+		<a ng-click="scrollTo('hero')" class="navigation__logo">
 			<img class="navigation__image" src="../images/kellee-small.png" alt="Kellee Martins">
-			<p class="navigation__text"> | Web Developer</p>
-		</div>
+			<p class="navigation__text">|  Web Developer</p>
+		</a>
 		<div class="navigation__links">
-			<a href="#work">Work</a>
-			<a href="#about">About</a>
-			<a href="#contact" class="button"><span>Contact</span></a>
+			<a ng-click="scrollTo('about')">About</a>
+			<a ng-click="scrollTo('projects')">Projects</a>
+			<a ng-click="scrollTo('contact')" class="button"><span>Contact</span></a>
 		</div>
 	</div>	
 </nav>

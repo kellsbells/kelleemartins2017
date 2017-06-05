@@ -1,5 +1,23 @@
 <div class="contact-view gradient">
 	<div class="container">
-		<h2>CONTACT</h2>
+		<img class="header" src="../images/contact.png" alt="Contact Kellee Martins">
+		<div class="contact-view__social" ng-controller="SocialController">
+			<div class="contact-view__all-social">
+				<a href="{{social.link}}" target="_blank" class="contact-view__single-social" ng-repeat="social in socials">
+					<ng-include src="social.icon"></ng-include>
+				</a>
+			</div>
+		</div>
+		<div class="contact-view__text">
+			Send me an <a href="mailto:kelleemartins@gmail.com">email</a>, I'd love to hear from you! 
+		</div>
+		<div class="contact-view__ctas">
+			<div class="contact-view__cta">
+				<button>View References</button>
+			</div>
+			<div class="contact-view__cta">
+				<button>Download Resume</button>
+			</div>
+		</div>
 	</div>
 </div>

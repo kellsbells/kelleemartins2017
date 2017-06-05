@@ -4,21 +4,42 @@
 
 var app = angular.module('kelleeMartins', []);
 
+app.controller('NavController', function($scope, $location, $anchorScroll) {
+   $scope.scrollTo = function(id) {
+      $location.hash(id);
+      $anchorScroll();
+   }
+});
+
 
 app.controller('SocialController', ['$scope', function($scope) {
 	$scope.socials = [
 		{
-			name: 'kellee', 
+			name: 'Github', 
+			icon: '../images/Github.svg',
+			link: 'https://github.com/kellsbells',
 		},
 		{
-			name: 'dawn', 
+			name: 'Twitter', 
+			icon: '../images/Twitter.svg',
+			link: 'https://twitter.com/kelleebutton',
 		},
+		{
+			name: 'LinkedIn', 
+			icon: '../images/Linkedin.svg',
+			link: 'https://www.linkedin.com/in/kelleemartins',
+		},
+		{
+			name: 'Instagram', 
+			icon: '../images/Instagram.svg',
+			link: 'https://www.instagram.com/kelleebutton/',
+		},
+		
 	]
 }]);
 
 
 app.controller('ProjectController', ['$scope', function($scope) {
-	$scope.test = 'hello';
 	$scope.projects = [
 		{
 			name: 'Adidas',
@@ -173,37 +194,5 @@ app.controller('ProjectController', ['$scope', function($scope) {
 
 		setInterval(updateGradient,10);
 	};
-
-
-	var logId = 0;
-	$scope.testLines = [];
-	for (var i = 20; i >= 0; i--) {
-		$scope.testLines.push(i);
-	};
-	$scope.inviewLogs = [];
-	$scope.lineInView = function(index, inview, inviewpart) {
-		console.log(index);
-		console.log(inview);
-		console.log(inviewpart);
-	};
-
 }]);
 
-
-app.directive('inViewport', function($window) {
-    return {
-      	scope: {
-        	scroll:'=scrollPosition'
-    	},
-    	link: function(scope, element, attrs) {
-    	  	var windowEl = angular.element($window);
-    	  	var handler = function() {
-    	  	    console.log($window.scrollY);
-    	  	  	scope.scroll = windowEl.scrollTop;
-    	  	}
-    	  	console.log(windowEl);
-    	  	//windowEl.on('scroll', scope.$apply.bind(scope, handler));
-    	  	handler();
-    	}
-    };
-});

@@ -12,7 +12,7 @@
 	<!-- Website CSS Styles -->
 	<link rel="stylesheet" href="css/main.css">
 	<!-- Font -->
-	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -24,26 +24,26 @@
 
 	<div class="site-content">
 
-		<div ng-include='"templates/header.html"'></div>
+		<div ng-include='"templates/header.html"' ng-controller="NavController"></div>
 
 
 		
 		<main class="main-container">
 
-			<div class="hero">
+			<div id="hero" class="hero">
 				<div ng-include='"partials/hero.html"'></div>
 			</div>
 
-			<div class="about">
+			<div id="about" class="about">
 				<div ng-include='"partials/about.html"'></div>
 			</div>
 
-			<div class="projects" ng-controller="ProjectController" ng-init="background()">
+			<div id="projects" class="projects" ng-controller="ProjectController" ng-init="background()">
 				
 				<div ng-include='"partials/projects.html"'></div>
 			</div>
 
-			<div class="contact">
+			<div id="contact" class="contact">
 				<div ng-include='"partials/contact.html"'></div>
 			</div>
 			
