@@ -136,10 +136,16 @@ a.button:hover:after {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 100vh;
+	min-height: 90vh;
 	width: 100%;
 	position: relative;
 	overflow: hidden;
+}
+
+@media (min-width: 800px) {
+	.hero-view {
+	  	min-height: 100vh;
+	}
 }
 
 .hero-view__scroll {
