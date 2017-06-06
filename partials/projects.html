@@ -2,11 +2,11 @@
 	<div class="container">
 		<img class="header" src="../images/projects.png" alt="Projects by Kellee Martins">
 		<div class="projects-view__wrapper">
-			<div class="projects-view__single" ng-repeat="project in projects">
+			<a href class="projects-view__single" ng-repeat="project in projects" ng-click="open(project)">
 				<div class="projects-view__image"  style="background: url('{{project.heroImage}}') no-repeat center center; background-size: cover;"></div>
 				<div class="projects-view__overlay"></div>
 				<div class="projects-view__content">{{project.name}}</div>
-			</div>
+			</a>
 		</div>	
 	</div>
 </div>

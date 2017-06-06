@@ -2,7 +2,7 @@
 * Main AngularJS Web Application
 */
 
-var app = angular.module('kelleeMartins', []);
+var app = angular.module('kelleeMartins', ['ui.bootstrap']);
 
 app.controller('NavController', function($scope, $location, $anchorScroll) {
    $scope.scrollTo = function(id) {
@@ -12,36 +12,18 @@ app.controller('NavController', function($scope, $location, $anchorScroll) {
 });
 
 
-app.controller('SocialController', ['$scope', function($scope) {
-	$scope.socials = [
-		{
-			name: 'Github', 
-			icon: '../images/Github.svg',
-			link: 'https://github.com/kellsbells',
-		},
-		{
-			name: 'Twitter', 
-			icon: '../images/Twitter.svg',
-			link: 'https://twitter.com/kelleebutton',
-		},
-		{
-			name: 'LinkedIn', 
-			icon: '../images/Linkedin.svg',
-			link: 'https://www.linkedin.com/in/kelleemartins',
-		},
-		{
-			name: 'Instagram', 
-			icon: '../images/Instagram.svg',
-			link: 'https://www.instagram.com/kelleebutton/',
-		},
-		
-	]
-}]);
 
 
-app.controller('ProjectController', ['$scope', function($scope) {
-	$scope.projects = [
-		{
+app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, project)
+{
+$scope.project = project;
+
+});
+
+app.controller('ProjectController', function($scope, $timeout, $modal, $log) {
+    
+    $scope.projects = [
+        {
 			name: 'Adidas',
 			heroImage: 'http://kelleemartins.com/wp-content/uploads/2016/07/adidas.jpg',
 			text: '<div><p><img class="size-medium wp-image-123 alignnone" src="http://kelleemartins.com/wp-content/uploads/2016/07/ad-F2-300x276.jpg" alt="ad-F2" width="300" height="276"></p><p>quick turn around<br>fun<br>360</p><p><img class="alignnone size-medium wp-image-122" src="http://kelleemartins.com/wp-content/uploads/2016/07/ad-F3-300x174.jpg" alt="ad-F3" width="300" height="174" srcset="http://kelleemartins.com/wp-content/uploads/2016/07/ad-F3-300x174.jpg 300w, http://kelleemartins.com/wp-content/uploads/2016/07/ad-F3-1024x595.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px"></p></div>',
@@ -125,12 +107,25 @@ app.controller('ProjectController', ['$scope', function($scope) {
 			havLink: true,
 			link: 'http://www.reebok.com/us/women-sports_bras',
 		},
+    ];
 
-		
-	];
+    // MODAL WINDOW
+    $scope.open = function (_project) {
 
+        var modalInstance = $modal.open({
+          controller: "ModalInstanceCtrl",
+          templateUrl: 'partials/modal.html',
+            resolve: {
+                project: function()
+                {
+                    return _project;
+                }
+            }
+        });
 
-	$scope.background = function() {
+    };
+
+    $scope.background = function() {
 
 		var colors = new Array(
 		  [62,35,255],
@@ -194,5 +189,38 @@ app.controller('ProjectController', ['$scope', function($scope) {
 
 		setInterval(updateGradient,10);
 	};
+
+
+});
+
+
+
+
+
+app.controller('SocialController', ['$scope', function($scope) {
+	$scope.socials = [
+		{
+			name: 'Github', 
+			icon: '../images/Github.svg',
+			link: 'https://github.com/kellsbells',
+		},
+		{
+			name: 'Twitter', 
+			icon: '../images/Twitter.svg',
+			link: 'https://twitter.com/kelleebutton',
+		},
+		{
+			name: 'LinkedIn', 
+			icon: '../images/Linkedin.svg',
+			link: 'https://www.linkedin.com/in/kelleemartins',
+		},
+		{
+			name: 'Instagram', 
+			icon: '../images/Instagram.svg',
+			link: 'https://www.instagram.com/kelleebutton/',
+		},
+		
+	]
 }]);
+
 
