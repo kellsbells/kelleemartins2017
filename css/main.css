@@ -136,15 +136,49 @@ a.button:hover:after {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 80vh;
+	min-height: 100vh;
 	width: 100%;
 	position: relative;
+	overflow: hidden;
 }
 
-@media (min-width: 800px) {
-	.hero-view  {
-	  	min-height: 100vh;
-	}
+.hero-view__scroll {
+	position: absolute;
+	bottom: 20px;
+	color: #FFF;
+	height: 50px;
+	width: 50px;
+	background-color: #9023BC;
+	border-radius: 100%;
+	left: 50%;
+    margin-left: -25px;
+    font-size: 32px;
+    text-align: center;
+    transition: all 400ms ease;
+    cursor: pointer;
+    animation: bounce 600ms infinite alternate;
+  	-webkit-animation: bounce 600ms infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-view__scroll:hover {
+	background-color: #3e23ff;
 }
 
 .hero-view__wrapper {
@@ -318,7 +352,13 @@ svg .wave {
 	color: #FFFFFF;
 	opacity: 0;
 	transition: all 400ms ease;
-	padding: 60px;
+	padding: 15px 0;
+}
+
+@media (min-width: 800px) {
+	.projects-view__content {
+	  	padding: 60px;
+	}
 }
 
 #custom-modal {
@@ -343,6 +383,22 @@ svg .wave {
 	padding: 10px 20px;
 }
 
+
+#custom-modal .close {
+	padding: 12px 20px 15px;
+    background-color: #9023BC;
+    transition: all 400ms ease;
+    opacity: 1;
+    position: absolute;
+    right: 20px;
+	color: #FFF;
+	text-shadow: 0;
+	font-size: 32px;
+}
+
+#custom-modal .close:hover {
+	background-color: #3e23ff;
+}
 
 
 

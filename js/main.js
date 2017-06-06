@@ -14,9 +14,12 @@ app.controller('NavController', function($scope, $location, $anchorScroll) {
 
 
 
-app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, project)
-{
-$scope.project = project;
+app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, project){
+	$scope.project = project;
+
+	$scope.cancel = function(){
+	    $modalInstance.dismiss('cancel');
+	};
 
 });
 
@@ -113,7 +116,6 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sc
 		},
     ];
 
-
     // MODAL WINDOW
     $scope.open = function (_project) {
 
@@ -194,7 +196,6 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sc
 
 		setInterval(updateGradient,10);
 	};
-
 
 });
 
