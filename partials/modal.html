@@ -1,6 +1,16 @@
 <div id="custom-modal">
-  <div id="overlay">
-      Project Name: {{project.name}}
-  </div>
-  <div id="fade"></div>
+  	<div id="overlay">
+  		<div class="project-image">
+  			<img ng-src="{{project.heroImage}}">
+  		</div>
+  		<div class="project-title">
+  			<h2>{{project.name}}</h2>
+  		</div>
+  		<div class="project-text" ng-bind-html="project.text | sanitize">
+  		</div>
+  		<div class="project-link" ng-if="project.havLink">
+  			<a class="button" target="_blank" ng-href="{{project.link}}"><span>See it in the Wild!</span></a>
+  		</div>
+  	</div>
+  	<div id="fade"></div>
 </div>

@@ -13,11 +13,20 @@
 		</div>
 		<div class="contact-view__ctas">
 			<div class="contact-view__cta">
-				<button>View References</button>
+				<button ng-click="showDetails = ! showDetails">View References</button>
 			</div>
 			<div class="contact-view__cta">
-				<button>Download Resume</button>
+				<a href="http://kelleemartins.com/wp-content/themes/kellee2016/assets/img/Kellee_Martins_Resume.pdf" download="">Download Resume</a>
+			</div>
+		</div>
+		<div class="contact-view__references" ng-class="{ 'hidden': ! showDetails }">
+			<div class="references">
+				<p>Senior at Zenman: Corinne Winthrop <a href="tel:7069948262">(720) 217-1838</a></p>
+				<p>Mentor and Senior at Voltage: Craig Freeman <a href="tel:6195592580">(619) 559-2580</a></p>
+				<p>Senior at Voltage: Randy Lybbert <a href="tel:7069948262">(706) 994-8262</a></p>
 			</div>
 		</div>
 	</div>
 </div>
+
+

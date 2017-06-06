@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kellsbells/kelleemartins2017/issues"
   },
-  "homepage": "https://github.com/kellsbells/kelleemartins2017#readme"
+  "homepage": "https://github.com/kellsbells/kelleemartins2017#readme",
+  "dependencies": {
+    "angular-sanitize": "^1.6.4"
+  }
 }

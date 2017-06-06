@@ -2,7 +2,7 @@
 * Main AngularJS Web Application
 */
 
-var app = angular.module('kelleeMartins', ['ui.bootstrap']);
+var app = angular.module('kelleeMartins', ['ui.bootstrap', 'ngSanitize']);
 
 app.controller('NavController', function($scope, $location, $anchorScroll) {
    $scope.scrollTo = function(id) {
@@ -20,8 +20,9 @@ $scope.project = project;
 
 });
 
-app.controller('ProjectController', function($scope, $timeout, $modal, $log) {
-    
+
+app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sce) {
+
     $scope.projects = [
         {
 			name: 'Adidas',
@@ -75,7 +76,10 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log) {
 		{
 			name: 'Hansen Orthodontics',
 			heroImage: 'http://kelleemartins.com/wp-content/uploads/2017/04/Screen-Shot-2017-04-09-at-10.18.19-AM.png',
-			text: '<div><p>Hansen Ortho was my first start to end project with my Zenman team. The entire site is actually constructed using Advanced Custom Field modules which allows the user to add multiple sections to create pages. The flexibility is amazing but making sure these modules worked in any combination on any page proved to be quite tricky.<br>I had quite a few modules that required a YouTube embed. This would break though if you had two embed modules on a page or even if a repeater within one module included a row that contained a YT embed. The YouTube API requires a unique ID that needed to be generated from each module and each row within each module. In each module file I create a random string that makes each module unique:<br><script src="https://gist.github.com/kellsbells/383b7b10bfc04428b824d5542a498628.js"></script><br>I then had to make each row within that module unique. I did by setting up a simple row counter:<br><script src="https://gist.github.com/kellsbells/c7e91dafcbe7cc047b751e45faf786b6.js"></script><br>In my JavaScript I then had to build an array of all the embeds for the YT API to map through and consume. I included some data attribute that can be set in the WP-Admin that dictate loop, autoplay and mute.<br><script src="https://gist.github.com/kellsbells/e36a6898bdeb3db8415bdffc235dfc32.js"></script></p></div>',
+			text: '<p>Hansen Ortho was my first start to end project with my Zenman team. The entire site is actually constructed using Advanced Custom Field modules which allows the user to add multiple sections to create pages. The flexibility is amazing but making sure these modules worked in any combination on any page proved to be quite tricky.<br>I had quite a few modules that required a YouTube embed. This would break though if you had two embed modules on a page or even if a repeater within one module included a row that contained a YT embed. The YouTube API requires a unique ID that needed to be generated from each module and each row within each module. In each module file I create a random string that makes each module unique:</p>' + 
+				'<script src="https://gist.github.com/kellsbells/383b7b10bfc04428b824d5542a498628.js"></script>' + 
+				'<p>I then had to make each row within that module unique. I did by setting up a simple row counter:<br><script src="https://gist.github.com/kellsbells/c7e91dafcbe7cc047b751e45faf786b6.js"></script><br>In my JavaScript I then had to build an array of all the embeds for the YT API to map through and consume. I included some data attribute that can be set in the WP-Admin that dictate loop, autoplay and mute.</p>' +
+				'<script src="https://gist.github.com/kellsbells/e36a6898bdeb3db8415bdffc235dfc32.js"></script>',
 			havLink: true,
 			link: 'http://www.bracesbydrhansen.com/',
 		},
@@ -108,6 +112,7 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log) {
 			link: 'http://www.reebok.com/us/women-sports_bras',
 		},
     ];
+
 
     // MODAL WINDOW
     $scope.open = function (_project) {
@@ -193,6 +198,11 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log) {
 
 });
 
+app.filter("sanitize", ['$sce', function($sce) {
+        return function(htmlCode){
+            return $sce.trustAsHtml(htmlCode);
+        }
+}]);
 
 
 

@@ -21,6 +21,13 @@ body {
 	padding-bottom: 20px;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
 
 a.button {
 	background-color: #9023BC;
@@ -63,38 +70,6 @@ a.button:hover:after {
 .gradient {
 	position: relative;
 }
-
-/*.gradient:before {
-	content: '';
-	width: 100%;
-	height: 40px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: rgba(255,255,255,0);
-    background: -moz-linear-gradient(rgba(255,255,255,1) 0%, rgba(255, 255, 255, 0) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(255, 255, 255, 0)));
-    background: -webkit-linear-gradient(rgba(255,255,255,1) 0%, rgba(255, 255, 255, 0) 100%);
-    background: -o-linear-gradient(rgba(255,255,255,1) 0%, rgba(255, 255, 255, 0) 100%);
-    background: -ms-linear-gradient(rgba(255,255,255,1) 0%, rgba(255, 255, 255, 0) 100%);
-    background: linear-gradient(rgba(255,255,255,1) 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-.gradient:after {
-	content: '';
-	width: 100%;
-	height: 40px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background: rgba(255,255,255,0);
-    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(255, 255, 255, 0)));
-    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 1) 100%);
-    background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 1) 100%);
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 1) 100%);
-}*/
 
 
 /******************** NAVIGATION ********************/
@@ -340,46 +315,27 @@ svg .wave {
 	padding: 60px;
 }
 
-
-
-
-/*#overlay {
-    position: fixed;
-    left: 25%;
-    top: 25%;
-    padding: 25px;
-    border: 2px solid black;
-    background-color: #ffffff;
-    width: 50%;
-    height: 50%;
-    z-index: 100;
-}
-#fade {
-    position: fixed;
-    left: 0%;
-    top: 0%;
-    background-color: black;
-    -moz-opacity: 0.7;
-    opacity: .70;
-    filter: alpha(opacity=70);
-    width: 100%;
-    height: 100%;
-    z-index: 90;
+#custom-modal {
+	text-align: center;
+	padding: 15px 20px 40px;
 }
 
-.modal-backdrop {
-  	background: rgba(62,35,255,1);
-	background-image: -ms-linear-gradient(right, rgba(62,35,255,1) 0%, rgba(255,35,98,1) 100%);
-	background-image: -moz-linear-gradient(right, rgba(62,35,255,1) 0%, rgba(255,35,98,1) 100%);
-	background-image: -o-linear-gradient(right, rgba(62,35,255,1) 0%, rgba(255,35,98,1) 100%);
-	background-image: -webkit-gradient(linear, right top, left top, color-stop(0, rgba(62,35,255,1)), color-stop(100, rgba(255,35,98,1)));
-	background-image: -webkit-linear-gradient(right, rgba(62,35,255,1) 0%, rgba(255,35,98,1) 100%);
-	background-image: linear-gradient(to left, rgba(62,35,255,1) 0%, rgba(255,35,98,1) 100%);
-    -moz-opacity: 0.9;
-    opacity: .90;
-    filter: alpha(opacity=90);
+.project-image img {
+	width: 100%;
 }
-*/
+
+.project-title h2 {
+	color: #9023BC;
+}
+
+.project-text {
+	text-align: justify;
+	padding: 10px 0 40px;
+}
+
+.project-link a.button {
+	padding: 10px 20px;
+}
 
 
 
@@ -387,7 +343,7 @@ svg .wave {
 /******************** CONTACT ********************/
 
 .contact-view {
-	padding: 100px 0 120px;
+	padding: 100px 0;
 	text-align: center;
 	color: #FFF;
 }
@@ -399,13 +355,12 @@ svg .wave {
 }
 
 .contact-view__text a {
-	color: #5c5c5c;
-	text-decoration: none;
+	color: #FFF;
+	text-decoration: underline;
 }
 
 .contact-view__text a:hover {
-	color: #FFF;
-	text-decoration: underline;
+	color: #5c5c5c;
 }
 
 
@@ -465,8 +420,43 @@ svg .wave {
 	cursor: pointer;
 }
 
+.contact-view__cta a {
+	background-color: #5c5c5c;
+	color: #FFF;
+	outline: 0;
+	border: 0;
+	border-radius: 5px;
+	transition: all 400ms ease;
+	padding: 6px 12px;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 1.5px;
+	font-size: 16px;
+	line-height: 1.5;
+	cursor: pointer;
+	display: block;
+}
+
 .contact-view__cta button:hover {
 	background-color: #FFF;
+	color: #5c5c5c;
+}
+
+.contact-view__cta a:hover {
+	background-color: #FFF;
+	color: #5c5c5c;
+	text-decoration: none;
+}
+
+.contact-view .references {
+	padding-top: 30px;
+}
+
+.contact-view .references a {
+	color: #FFF;
+	text-decoration: underline;
+}
+
+.contact-view .references a:hover {
 	color: #5c5c5c;
 }
 
