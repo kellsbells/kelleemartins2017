@@ -2,7 +2,20 @@
 	<div class="container">
 		<img class="header" src="../images/about.png" alt="About Kellee Martins">
 		<div class="about-view__text">
-			Hi! My name is Kellee. I'm so excited that you're here on my site! I am so passionate about what I do! If there's one thing I could convey on my portfolio it's that I truly love to code. I live to solve problems and build beautiful things. Web development allows me to touch the lives of people around the world, I just love that! I still have so much to learn, and always will, as I become the best web developer I can be. But if you're looking for someone who will work hard and have a positve attitude you've come to the right place.
+			{{about}}
+		</div>
+
+		<h4>A few of my favorite tools:</h4>
+		<div class="about-view__icons">
+			<div class="about-view__icon" ng-repeat="tool in tools" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+				<img ng-src="{{tool.icon}}" alt="{{tool.title}} icon">
+				<p ng-show="hoverEdit">{{tool.title}}</p>
+				<div class="heart" ng-if="tool.heart">❤</div>
+				<div class="learning" ng-if="tool.learning">✍</div>
+			</div>
 		</div>
 	</div>
 </div>
+
+
+<!-- <p ng-show="hoverEdit">{{tool.title}}</p> -->

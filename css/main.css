@@ -238,20 +238,63 @@ a.button:hover:after {
 	text-align: justify;
 }
 
-.about-view__wave {
+.about-view__icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding-top: 40px;
+}
+
+.about-view__icon {
+	width: 14%;
+	position: relative;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about-view__icon img {
+	max-width: 100%;
+	opacity: 1;
+	cursor: pointer;
+	transition: all 400ms ease;
+}
+
+.about-view__icon:hover img {
+	opacity: 0.5;
+}
+
+.about-view__icon p {
 	position: absolute;
-	top: -38%;
+	color: #5c5c5c;
+	margin: 0;
+	background-color: rgba(255,255,255,1);
+	padding: 10px;
+	width: 100%;
 }
 
-.about-view__wave-bottom {
+.about-view__icon .heart {
+	width: 30px;
 	position: absolute;
-	bottom: -38%;
+	bottom: 0;
+	right: 0;
+	height: 30px;
+	border-radius: 300%;
+	background-color: red;
 }
 
-svg .wave {
-	fill: #FFF;
+.about-view__icon .learning {
+	width: 30px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 30px;
+	border-radius: 100%;
+	background-color: blue;
 }
-
 
 /******************** PROJECTS ********************/
 

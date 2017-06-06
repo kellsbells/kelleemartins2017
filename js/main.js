@@ -11,9 +11,6 @@ app.controller('NavController', function($scope, $location, $anchorScroll) {
    }
 });
 
-
-
-
 app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, project){
 	$scope.project = project;
 
@@ -22,7 +19,6 @@ app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, project){
 	};
 
 });
-
 
 app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sce) {
 
@@ -205,8 +201,105 @@ app.filter("sanitize", ['$sce', function($sce) {
         }
 }]);
 
+app.controller('AboutController', ['$scope', function($scope) {
+	$scope.about = 'Hi! My name is Kellee. I\'m so excited that you\'re here on my site! I am so passionate about what I do! If there\'s one thing I could convey on my portfolio it\'s that I truly love to code. I live to solve problems and build beautiful things. Web development allows me to touch the lives of people around the world, I just love that! I still have so much to learn, and always will, as I become the best web developer I can be. But if you\'re looking for someone who will work hard and have a positve attitude you\'ve come to the right place.';
 
+	$scope.hoverIn = function(){
+	    this.hoverEdit = true;
+	};
 
+	$scope.hoverOut = function(){
+	    this.hoverEdit = false;
+	};
+
+	$scope.tools = [
+		{
+			title: 'AngularJS',
+			icon: 'images/icons/angularjs.png',
+			heart: true,
+			learning: false,
+		},
+		{
+			title: 'Angular',
+			icon: 'images/icons/angularjs.png',
+			heart: true,
+			learning: true,
+		},
+		{
+			title: 'JavaScript',
+			icon: 'images/icons/javascript.png',
+			heart: true,
+			learning: false,
+		},
+		{
+			title: 'jQuery',
+			icon: 'images/icons/jquery.png',
+			heart: false,
+			learning: false,
+		},
+		{
+			title: 'React',
+			icon: 'images/icons/react.png',
+			heart: false,
+			learning: true,
+		},
+		{
+			title: 'HTML5',
+			icon: 'images/icons/html5.png',
+			heart: false,
+			learning: false,
+		},
+		{
+			title: 'CSS3',
+			icon: 'images/icons/css3.png',
+			heart: false,
+			learning: false,
+		},
+		{
+			title: 'Git',
+			icon: 'images/icons/git.png',
+			heart: false,
+			learning: false,
+		},
+		{
+			title: 'Gulp',
+			icon: 'images/icons/gulp.png',
+			heart: false,
+			learning: false,
+		},
+		{
+			title: 'Photoshop',
+			icon: 'images/icons/photoshop.png',
+			heart: false,
+			learning: false,
+		},
+		{
+			title: 'PHP',
+			icon: 'images/icons/php.png',
+			heart: false,
+			learning: false,
+		},
+		{
+			title: 'Sass',
+			icon: 'images/icons/sass.png',
+			heart: false,
+			learning: false,
+		},
+		{
+			title: 'Shopify',
+			icon: 'images/icons/shopify.png',
+			heart: false,
+			learning: false,
+		},
+		{
+			title: 'Susy',
+			icon: 'images/icons/susy.png',
+			heart: false,
+			learning: false,
+		},
+	]
+
+}]);
 
 app.controller('SocialController', ['$scope', function($scope) {
 	$scope.socials = [
