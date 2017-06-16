@@ -21,10 +21,511 @@
 	<link rel="stylesheet" href="vendor/bootstrap.min.css">
 	<script src="vendor/ui-bootstrap-tpls.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.js"></script>
-
 </head>
 
 <body ng-app="kelleeMartins">
+
+	<div class="gists">
+		<div class="gist-one">
+			<script src="https://gist.github.com/kellsbells/383b7b10bfc04428b824d5542a498628.js"></script>
+		</div>
+		<div class="gist-two">
+			<div id="gist47901623" class="gist">
+			    <div class="gist-file">
+			      <div class="gist-data">
+			        <div class="js-gist-file-update-container js-task-list-container file-box">
+			  <div id="file-multiple-yt-embed" class="file">
+			    
+
+			  <div itemprop="text" class="blob-wrapper data type-text">
+			      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+			      <tbody><tr>
+			        <td id="file-multiple-yt-embed-L1" class="blob-num js-line-number" data-line-number="1"></td>
+			        <td id="file-multiple-yt-embed-LC1" class="blob-code blob-code-inner js-file-line">/*</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L2" class="blob-num js-line-number" data-line-number="2"></td>
+			        <td id="file-multiple-yt-embed-LC2" class="blob-code blob-code-inner js-file-line">*  YouTube API</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L3" class="blob-num js-line-number" data-line-number="3"></td>
+			        <td id="file-multiple-yt-embed-LC3" class="blob-code blob-code-inner js-file-line">*  Only executes if '.ytvideo' is on page</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L4" class="blob-num js-line-number" data-line-number="4"></td>
+			        <td id="file-multiple-yt-embed-LC4" class="blob-code blob-code-inner js-file-line">*/</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L5" class="blob-num js-line-number" data-line-number="5"></td>
+			        <td id="file-multiple-yt-embed-LC5" class="blob-code blob-code-inner js-file-line">if( $( '.ytvideo' ).length ) {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L6" class="blob-num js-line-number" data-line-number="6"></td>
+			        <td id="file-multiple-yt-embed-LC6" class="blob-code blob-code-inner js-file-line">	//take all the elements (and their data attributes) that have the class 'ytvideo' and create array</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L7" class="blob-num js-line-number" data-line-number="7"></td>
+			        <td id="file-multiple-yt-embed-LC7" class="blob-code blob-code-inner js-file-line">	var playerInfoList = $( '.ytvideo' ).map(function() {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L8" class="blob-num js-line-number" data-line-number="8"></td>
+			        <td id="file-multiple-yt-embed-LC8" class="blob-code blob-code-inner js-file-line">		var $loop = 0;</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L9" class="blob-num js-line-number" data-line-number="9"></td>
+			        <td id="file-multiple-yt-embed-LC9" class="blob-code blob-code-inner js-file-line">		var $autoplay = 0;</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L10" class="blob-num js-line-number" data-line-number="10"></td>
+			        <td id="file-multiple-yt-embed-LC10" class="blob-code blob-code-inner js-file-line">		var $mute = 0;</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L11" class="blob-num js-line-number" data-line-number="11"></td>
+			        <td id="file-multiple-yt-embed-LC11" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L12" class="blob-num js-line-number" data-line-number="12"></td>
+			        <td id="file-multiple-yt-embed-LC12" class="blob-code blob-code-inner js-file-line">		if ( $(this).attr('data-loop') === 'true' ) {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L13" class="blob-num js-line-number" data-line-number="13"></td>
+			        <td id="file-multiple-yt-embed-LC13" class="blob-code blob-code-inner js-file-line">			var $loop = 1;</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L14" class="blob-num js-line-number" data-line-number="14"></td>
+			        <td id="file-multiple-yt-embed-LC14" class="blob-code blob-code-inner js-file-line">		}</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L15" class="blob-num js-line-number" data-line-number="15"></td>
+			        <td id="file-multiple-yt-embed-LC15" class="blob-code blob-code-inner js-file-line">		if ( $(this).attr('data-autoplay') === 'true' ) {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L16" class="blob-num js-line-number" data-line-number="16"></td>
+			        <td id="file-multiple-yt-embed-LC16" class="blob-code blob-code-inner js-file-line">			var $autoplay = 1;</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L17" class="blob-num js-line-number" data-line-number="17"></td>
+			        <td id="file-multiple-yt-embed-LC17" class="blob-code blob-code-inner js-file-line">		}</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L18" class="blob-num js-line-number" data-line-number="18"></td>
+			        <td id="file-multiple-yt-embed-LC18" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L19" class="blob-num js-line-number" data-line-number="19"></td>
+			        <td id="file-multiple-yt-embed-LC19" class="blob-code blob-code-inner js-file-line">		if ( $(this).attr('data-mute') === 'true' ) {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L20" class="blob-num js-line-number" data-line-number="20"></td>
+			        <td id="file-multiple-yt-embed-LC20" class="blob-code blob-code-inner js-file-line">			var $mute = 1;</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L21" class="blob-num js-line-number" data-line-number="21"></td>
+			        <td id="file-multiple-yt-embed-LC21" class="blob-code blob-code-inner js-file-line">		}</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L22" class="blob-num js-line-number" data-line-number="22"></td>
+			        <td id="file-multiple-yt-embed-LC22" class="blob-code blob-code-inner js-file-line">		return {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L23" class="blob-num js-line-number" data-line-number="23"></td>
+			        <td id="file-multiple-yt-embed-LC23" class="blob-code blob-code-inner js-file-line">			id: $(this).attr('id'),</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L24" class="blob-num js-line-number" data-line-number="24"></td>
+			        <td id="file-multiple-yt-embed-LC24" class="blob-code blob-code-inner js-file-line">			videoId: $(this).attr('data-videoid'),</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L25" class="blob-num js-line-number" data-line-number="25"></td>
+			        <td id="file-multiple-yt-embed-LC25" class="blob-code blob-code-inner js-file-line">			autoplay: $autoplay,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L26" class="blob-num js-line-number" data-line-number="26"></td>
+			        <td id="file-multiple-yt-embed-LC26" class="blob-code blob-code-inner js-file-line">			loop: $loop,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L27" class="blob-num js-line-number" data-line-number="27"></td>
+			        <td id="file-multiple-yt-embed-LC27" class="blob-code blob-code-inner js-file-line">			mute: $mute,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L28" class="blob-num js-line-number" data-line-number="28"></td>
+			        <td id="file-multiple-yt-embed-LC28" class="blob-code blob-code-inner js-file-line">		};</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L29" class="blob-num js-line-number" data-line-number="29"></td>
+			        <td id="file-multiple-yt-embed-LC29" class="blob-code blob-code-inner js-file-line">	}).get();</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L30" class="blob-num js-line-number" data-line-number="30"></td>
+			        <td id="file-multiple-yt-embed-LC30" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L31" class="blob-num js-line-number" data-line-number="31"></td>
+			        <td id="file-multiple-yt-embed-LC31" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L32" class="blob-num js-line-number" data-line-number="32"></td>
+			        <td id="file-multiple-yt-embed-LC32" class="blob-code blob-code-inner js-file-line">	var tag = document.createElement('script');</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L33" class="blob-num js-line-number" data-line-number="33"></td>
+			        <td id="file-multiple-yt-embed-LC33" class="blob-code blob-code-inner js-file-line">	tag.src = "https://www.youtube.com/iframe_api";</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L34" class="blob-num js-line-number" data-line-number="34"></td>
+			        <td id="file-multiple-yt-embed-LC34" class="blob-code blob-code-inner js-file-line">	var firstScriptTag = document.getElementsByTagName('script')[0];</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L35" class="blob-num js-line-number" data-line-number="35"></td>
+			        <td id="file-multiple-yt-embed-LC35" class="blob-code blob-code-inner js-file-line">	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L36" class="blob-num js-line-number" data-line-number="36"></td>
+			        <td id="file-multiple-yt-embed-LC36" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L37" class="blob-num js-line-number" data-line-number="37"></td>
+			        <td id="file-multiple-yt-embed-LC37" class="blob-code blob-code-inner js-file-line">	//when YT API is ready create players and pass it the parameters set by the user and found in the data attributes</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L38" class="blob-num js-line-number" data-line-number="38"></td>
+			        <td id="file-multiple-yt-embed-LC38" class="blob-code blob-code-inner js-file-line">	function onYouTubeIframeAPIReady() {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L39" class="blob-num js-line-number" data-line-number="39"></td>
+			        <td id="file-multiple-yt-embed-LC39" class="blob-code blob-code-inner js-file-line">		if (typeof playerInfoList === 'undefined') return;</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L40" class="blob-num js-line-number" data-line-number="40"></td>
+			        <td id="file-multiple-yt-embed-LC40" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L41" class="blob-num js-line-number" data-line-number="41"></td>
+			        <td id="file-multiple-yt-embed-LC41" class="blob-code blob-code-inner js-file-line">		if((typeof YT !== "undefined") &amp;&amp; YT &amp;&amp; YT.Player){</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L42" class="blob-num js-line-number" data-line-number="42"></td>
+			        <td id="file-multiple-yt-embed-LC42" class="blob-code blob-code-inner js-file-line">			for (var i = 0; i &lt; playerInfoList.length; i++) {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L43" class="blob-num js-line-number" data-line-number="43"></td>
+			        <td id="file-multiple-yt-embed-LC43" class="blob-code blob-code-inner js-file-line">				var curplayer = createPlayer(playerInfoList[i]);</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L44" class="blob-num js-line-number" data-line-number="44"></td>
+			        <td id="file-multiple-yt-embed-LC44" class="blob-code blob-code-inner js-file-line">				players[i] = curplayer;</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L45" class="blob-num js-line-number" data-line-number="45"></td>
+			        <td id="file-multiple-yt-embed-LC45" class="blob-code blob-code-inner js-file-line">			}</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L46" class="blob-num js-line-number" data-line-number="46"></td>
+			        <td id="file-multiple-yt-embed-LC46" class="blob-code blob-code-inner js-file-line">		}else{</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L47" class="blob-num js-line-number" data-line-number="47"></td>
+			        <td id="file-multiple-yt-embed-LC47" class="blob-code blob-code-inner js-file-line">			setTimeout(onYouTubeIframeAPIReady, 100);</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L48" class="blob-num js-line-number" data-line-number="48"></td>
+			        <td id="file-multiple-yt-embed-LC48" class="blob-code blob-code-inner js-file-line">		}</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L49" class="blob-num js-line-number" data-line-number="49"></td>
+			        <td id="file-multiple-yt-embed-LC49" class="blob-code blob-code-inner js-file-line">	}</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L50" class="blob-num js-line-number" data-line-number="50"></td>
+			        <td id="file-multiple-yt-embed-LC50" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L51" class="blob-num js-line-number" data-line-number="51"></td>
+			        <td id="file-multiple-yt-embed-LC51" class="blob-code blob-code-inner js-file-line">	var players = new Array();</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L52" class="blob-num js-line-number" data-line-number="52"></td>
+			        <td id="file-multiple-yt-embed-LC52" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L53" class="blob-num js-line-number" data-line-number="53"></td>
+			        <td id="file-multiple-yt-embed-LC53" class="blob-code blob-code-inner js-file-line">	function createPlayer(playerInfo) {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L54" class="blob-num js-line-number" data-line-number="54"></td>
+			        <td id="file-multiple-yt-embed-LC54" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L55" class="blob-num js-line-number" data-line-number="55"></td>
+			        <td id="file-multiple-yt-embed-LC55" class="blob-code blob-code-inner js-file-line">		return new YT.Player(playerInfo.id, {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L56" class="blob-num js-line-number" data-line-number="56"></td>
+			        <td id="file-multiple-yt-embed-LC56" class="blob-code blob-code-inner js-file-line">			identifier: playerInfo.id,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L57" class="blob-num js-line-number" data-line-number="57"></td>
+			        <td id="file-multiple-yt-embed-LC57" class="blob-code blob-code-inner js-file-line">			videoId: playerInfo.videoId,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L58" class="blob-num js-line-number" data-line-number="58"></td>
+			        <td id="file-multiple-yt-embed-LC58" class="blob-code blob-code-inner js-file-line">			playerVars: { </td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L59" class="blob-num js-line-number" data-line-number="59"></td>
+			        <td id="file-multiple-yt-embed-LC59" class="blob-code blob-code-inner js-file-line">				'autoplay': playerInfo.autoplay,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L60" class="blob-num js-line-number" data-line-number="60"></td>
+			        <td id="file-multiple-yt-embed-LC60" class="blob-code blob-code-inner js-file-line">				// 'loop': playerInfo.loop,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L61" class="blob-num js-line-number" data-line-number="61"></td>
+			        <td id="file-multiple-yt-embed-LC61" class="blob-code blob-code-inner js-file-line">				'modestbranding': 1,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L62" class="blob-num js-line-number" data-line-number="62"></td>
+			        <td id="file-multiple-yt-embed-LC62" class="blob-code blob-code-inner js-file-line">				'controls': 0, </td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L63" class="blob-num js-line-number" data-line-number="63"></td>
+			        <td id="file-multiple-yt-embed-LC63" class="blob-code blob-code-inner js-file-line">				'rel' : 0,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L64" class="blob-num js-line-number" data-line-number="64"></td>
+			        <td id="file-multiple-yt-embed-LC64" class="blob-code blob-code-inner js-file-line">				'autohide': 1,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L65" class="blob-num js-line-number" data-line-number="65"></td>
+			        <td id="file-multiple-yt-embed-LC65" class="blob-code blob-code-inner js-file-line">				'showinfo': 0,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L66" class="blob-num js-line-number" data-line-number="66"></td>
+			        <td id="file-multiple-yt-embed-LC66" class="blob-code blob-code-inner js-file-line">				'playlist': playerInfo.videoId,</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L67" class="blob-num js-line-number" data-line-number="67"></td>
+			        <td id="file-multiple-yt-embed-LC67" class="blob-code blob-code-inner js-file-line">			},</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L68" class="blob-num js-line-number" data-line-number="68"></td>
+			        <td id="file-multiple-yt-embed-LC68" class="blob-code blob-code-inner js-file-line">			events: {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L69" class="blob-num js-line-number" data-line-number="69"></td>
+			        <td id="file-multiple-yt-embed-LC69" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L70" class="blob-num js-line-number" data-line-number="70"></td>
+			        <td id="file-multiple-yt-embed-LC70" class="blob-code blob-code-inner js-file-line">				"onReady": createYTEvent(playerInfo)</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L71" class="blob-num js-line-number" data-line-number="71"></td>
+			        <td id="file-multiple-yt-embed-LC71" class="blob-code blob-code-inner js-file-line">			}</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L72" class="blob-num js-line-number" data-line-number="72"></td>
+			        <td id="file-multiple-yt-embed-LC72" class="blob-code blob-code-inner js-file-line">		});</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L73" class="blob-num js-line-number" data-line-number="73"></td>
+			        <td id="file-multiple-yt-embed-LC73" class="blob-code blob-code-inner js-file-line">	}</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L74" class="blob-num js-line-number" data-line-number="74"></td>
+			        <td id="file-multiple-yt-embed-LC74" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L75" class="blob-num js-line-number" data-line-number="75"></td>
+			        <td id="file-multiple-yt-embed-LC75" class="blob-code blob-code-inner js-file-line">	// onReady create YT event that allows for a custom play button</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L76" class="blob-num js-line-number" data-line-number="76"></td>
+			        <td id="file-multiple-yt-embed-LC76" class="blob-code blob-code-inner js-file-line">	function createYTEvent(identifier) {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L77" class="blob-num js-line-number" data-line-number="77"></td>
+			        <td id="file-multiple-yt-embed-LC77" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L78" class="blob-num js-line-number" data-line-number="78"></td>
+			        <td id="file-multiple-yt-embed-LC78" class="blob-code blob-code-inner js-file-line">		return function (event) {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L79" class="blob-num js-line-number" data-line-number="79"></td>
+			        <td id="file-multiple-yt-embed-LC79" class="blob-code blob-code-inner js-file-line">			if ((identifier.mute) === 1) {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L80" class="blob-num js-line-number" data-line-number="80"></td>
+			        <td id="file-multiple-yt-embed-LC80" class="blob-code blob-code-inner js-file-line">				event.target.mute();</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L81" class="blob-num js-line-number" data-line-number="81"></td>
+			        <td id="file-multiple-yt-embed-LC81" class="blob-code blob-code-inner js-file-line">			}</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L82" class="blob-num js-line-number" data-line-number="82"></td>
+			        <td id="file-multiple-yt-embed-LC82" class="blob-code blob-code-inner js-file-line">			var player = identifier; // Set player reference</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L83" class="blob-num js-line-number" data-line-number="83"></td>
+			        <td id="file-multiple-yt-embed-LC83" class="blob-code blob-code-inner js-file-line">			var the_div = $('#'+identifier.id).siblings( '.play-button');</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L84" class="blob-num js-line-number" data-line-number="84"></td>
+			        <td id="file-multiple-yt-embed-LC84" class="blob-code blob-code-inner js-file-line">			the_div.removeClass('playing' ).addClass('not-playing');</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L85" class="blob-num js-line-number" data-line-number="85"></td>
+			        <td id="file-multiple-yt-embed-LC85" class="blob-code blob-code-inner js-file-line">
+			</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L86" class="blob-num js-line-number" data-line-number="86"></td>
+			        <td id="file-multiple-yt-embed-LC86" class="blob-code blob-code-inner js-file-line">			the_div.on('click', function() {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L87" class="blob-num js-line-number" data-line-number="87"></td>
+			        <td id="file-multiple-yt-embed-LC87" class="blob-code blob-code-inner js-file-line">				var $this = $(this);</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L88" class="blob-num js-line-number" data-line-number="88"></td>
+			        <td id="file-multiple-yt-embed-LC88" class="blob-code blob-code-inner js-file-line">				if ($this.hasClass('not-playing')) {</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L89" class="blob-num js-line-number" data-line-number="89"></td>
+			        <td id="file-multiple-yt-embed-LC89" class="blob-code blob-code-inner js-file-line">					event.target.playVideo();</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L90" class="blob-num js-line-number" data-line-number="90"></td>
+			        <td id="file-multiple-yt-embed-LC90" class="blob-code blob-code-inner js-file-line">					$this.addClass('playing' ).removeClass('not-playing');</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L91" class="blob-num js-line-number" data-line-number="91"></td>
+			        <td id="file-multiple-yt-embed-LC91" class="blob-code blob-code-inner js-file-line">					$this.hide();</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L92" class="blob-num js-line-number" data-line-number="92"></td>
+			        <td id="file-multiple-yt-embed-LC92" class="blob-code blob-code-inner js-file-line">				}    </td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L93" class="blob-num js-line-number" data-line-number="93"></td>
+			        <td id="file-multiple-yt-embed-LC93" class="blob-code blob-code-inner js-file-line">			});	</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L94" class="blob-num js-line-number" data-line-number="94"></td>
+			        <td id="file-multiple-yt-embed-LC94" class="blob-code blob-code-inner js-file-line">		}</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L95" class="blob-num js-line-number" data-line-number="95"></td>
+			        <td id="file-multiple-yt-embed-LC95" class="blob-code blob-code-inner js-file-line">	}</td>
+			      </tr>
+			      <tr>
+			        <td id="file-multiple-yt-embed-L96" class="blob-num js-line-number" data-line-number="96"></td>
+			        <td id="file-multiple-yt-embed-LC96" class="blob-code blob-code-inner js-file-line">}	</td>
+			      </tr>
+			</tbody></table>
+
+			  </div>
+
+			  </div>
+			  
+			</div>
+
+			      </div>
+			      <div class="gist-meta">
+			        <a href="https://gist.github.com/kellsbells/e36a6898bdeb3db8415bdffc235dfc32/raw/e3e55c70d20f5bc5996d4852c18c7d0d16b10197/Multiple%20YT%20Embed" style="float:right">view raw</a>
+			        <a href="https://gist.github.com/kellsbells/e36a6898bdeb3db8415bdffc235dfc32#file-multiple-yt-embed">Multiple YT Embed</a>
+			        hosted with ❤ by <a href="https://github.com">GitHub</a>
+			      </div>
+			    </div>
+			</div>
+		</div>
+		<div class="gist-three">
+			<div class="gist-three">
+				<div id="gist47987845" class="gist">
+				    <div class="gist-file">
+				      <div class="gist-data">
+				        <div class="js-gist-file-update-container js-task-list-container file-box">
+				<div id="file-repeatable-youtube-video-module" class="file">
+				    
+
+				<div itemprop="text" class="blob-wrapper data type-text">
+				      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+				      <tbody><tr>
+				        <td id="file-repeatable-youtube-video-module-L1" class="blob-num js-line-number" data-line-number="1"></td>
+				        <td id="file-repeatable-youtube-video-module-LC1" class="blob-code blob-code-inner js-file-line">&lt;?php if( have_rows(‘one_column_row‘) ):</td>
+				      </tr>
+				      <tr>
+				        <td id="file-repeatable-youtube-video-module-L2" class="blob-num js-line-number" data-line-number="2"></td>
+				        <td id="file-repeatable-youtube-video-module-LC2" class="blob-code blob-code-inner js-file-line">  $rownumber = 1; </td>
+				      </tr>
+				      <tr>
+				        <td id="file-repeatable-youtube-video-module-L3" class="blob-num js-line-number" data-line-number="3"></td>
+				        <td id="file-repeatable-youtube-video-module-LC3" class="blob-code blob-code-inner js-file-line">  if ($video_id) : ?&gt;</td>
+				      </tr>
+				      <tr>
+				        <td id="file-repeatable-youtube-video-module-L4" class="blob-num js-line-number" data-line-number="4"></td>
+				        <td id="file-repeatable-youtube-video-module-LC4" class="blob-code blob-code-inner js-file-line">    &lt;div class=“video-container“&gt;</td>
+				      </tr>
+				      <tr>
+				        <td id="file-repeatable-youtube-video-module-L5" class="blob-num js-line-number" data-line-number="5"></td>
+				        <td id="file-repeatable-youtube-video-module-LC5" class="blob-code blob-code-inner js-file-line">      &lt;div class=“play-button“ style=“background: url(‘https://img.youtube.com/vi/&lt;?php echo $video_id ?&gt;/hqdefault.jpg’) no-repeat center center; background-size: cover;“&gt;&lt;img class=“actual-play-button“ src=“&lt;?php echo get_template_directory_uri(); ?&gt;/images/play-button-video.png“ alt=“Play Button“&gt;&lt;/div&gt;</td>
+				      </tr>
+				      <tr>
+				        <td id="file-repeatable-youtube-video-module-L6" class="blob-num js-line-number" data-line-number="6"></td>
+				        <td id="file-repeatable-youtube-video-module-LC6" class="blob-code blob-code-inner js-file-line">      &lt;div id=“video-&lt;?php echo $random_string ?&gt;–&lt;?php echo $rownumber ?&gt;“ class=“ytvideo fix-embed-container“ data-videoid=“&lt;?php echo $video_id ?&gt;“ data-autoplay=“false“ data-loop=“false“ data-mute=“false“&gt;</td>
+				      </tr>
+				      <tr>
+				        <td id="file-repeatable-youtube-video-module-L7" class="blob-num js-line-number" data-line-number="7"></td>
+				        <td id="file-repeatable-youtube-video-module-LC7" class="blob-code blob-code-inner js-file-line">      &lt;/div&gt;</td>
+				      </tr>
+				      <tr>
+				        <td id="file-repeatable-youtube-video-module-L8" class="blob-num js-line-number" data-line-number="8"></td>
+				        <td id="file-repeatable-youtube-video-module-LC8" class="blob-code blob-code-inner js-file-line">    &lt;/div&gt;</td>
+				      </tr>
+				      <tr>
+				        <td id="file-repeatable-youtube-video-module-L9" class="blob-num js-line-number" data-line-number="9"></td>
+				        <td id="file-repeatable-youtube-video-module-LC9" class="blob-code blob-code-inner js-file-line">  &lt;?php endif;</td>
+				      </tr>
+				      <tr>
+				        <td id="file-repeatable-youtube-video-module-L10" class="blob-num js-line-number" data-line-number="10"></td>
+				        <td id="file-repeatable-youtube-video-module-LC10" class="blob-code blob-code-inner js-file-line">  ++$rownumber</td>
+				      </tr>
+				      <tr>
+				        <td id="file-repeatable-youtube-video-module-L11" class="blob-num js-line-number" data-line-number="11"></td>
+				        <td id="file-repeatable-youtube-video-module-LC11" class="blob-code blob-code-inner js-file-line">endif; ?&gt;</td>
+				      </tr>
+				</tbody></table>
+		</div>
+  	</div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/kellsbells/c7e91dafcbe7cc047b751e45faf786b6/raw/5607ab27d35a187414d95307dff1b84cd599aa4a/Repeatable%20YouTube%20Video%20Module" style="float:right">view raw</a>
+        <a href="https://gist.github.com/kellsbells/c7e91dafcbe7cc047b751e45faf786b6#file-repeatable-youtube-video-module">Repeatable YouTube Video Module</a>
+        hosted with ❤ by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div>
+
+		</div>
+		</div>
+	</div>
 
 	<div class="site-content">
 

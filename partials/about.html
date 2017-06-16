@@ -7,15 +7,14 @@
 
 		<h4>A few of my favorite tools:</h4>
 		<div class="about-view__icons">
-			<div class="about-view__icon" ng-repeat="tool in tools" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+			<div ng-class="{heart: tool.heart, learning: tool.learning}" class="about-view__icon" ng-repeat="tool in tools" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
 				<img ng-src="{{tool.icon}}" alt="{{tool.title}} icon">
 				<p ng-show="hoverEdit">{{tool.title}}</p>
-				<div class="heart" ng-if="tool.heart">❤</div>
-				<div class="learning" ng-if="tool.learning">✍</div>
 			</div>
+		</div>
+		<div class="legend">
+			<p><span class="heart">❤</span> = loving</p>
+			<p><span class="learning">⚒</span> = learning</p>
 		</div>
 	</div>
 </div>
-
-
-<!-- <p ng-show="hoverEdit">{{tool.title}}</p> -->

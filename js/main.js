@@ -21,12 +21,15 @@ app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, project){
 });
 
 app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sce) {
+	$scope.gistOne = $('.gist-one').html();
+	$scope.gistTwo = $('.gist-two').html();
+	$scope.gistThree = $('.gist-three').html();
 
     $scope.projects = [
         {
 			name: 'Adidas',
 			heroImage: 'images/projects/adidas.jpg',
-			text: '<div><p><img class="size-medium wp-image-123 alignnone" src="http://kelleemartins.com/wp-content/uploads/2016/07/ad-F2-300x276.jpg" alt="ad-F2" width="300" height="276"></p><p>quick turn around<br>fun<br>360</p><p><img class="alignnone size-medium wp-image-122" src="http://kelleemartins.com/wp-content/uploads/2016/07/ad-F3-300x174.jpg" alt="ad-F3" width="300" height="174" srcset="http://kelleemartins.com/wp-content/uploads/2016/07/ad-F3-300x174.jpg 300w, http://kelleemartins.com/wp-content/uploads/2016/07/ad-F3-1024x595.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px"></p></div>',
+			text: '<div><p><img src="http://kelleemartins.com/images/alphabounce1.jpg" alt="AlphaBounce Desktop View"></p><p>quick turn around<br>360</p><p><img src="http://kelleemartins.com/images/alphabounce2.jpg" alt="AlphaBounce Mobile View"></p></div>',
 			havLink: false,
 			link: '',
 		},
@@ -40,7 +43,7 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sc
 		{
 			name: 'BlueStar Cooking',
 			heroImage: 'images/projects/bluestar.jpg',
-			text: '<div><p>Although my co-workers might disagree, I really enjoyed working on BlueStar! I was on the project from the very beginning which means I knew it inside out. That’s always an enjoyable experience, really makes you feel like you have a handle on things. I started off by building out the templates using HTML, CSS, and JavaScript. Then I brought in CMB2 to handle the custom content and implemented custom post types to handle different products and gallery images. This is actually a pretty common flow in my projects. But each time I get faster, more modular, more thorough, and gain a more complete understanding of the tools and techniques I’m using.</p></div>',
+			text: '<div><p>I really enjoyed working on BlueStar! I was on the project from the very beginning which means I knew it inside out. That’s always an enjoyable experience, really makes you feel like you have a handle on things. I started off by building out the templates using HTML, CSS, and JavaScript. Then I brought in CMB2 to handle the custom content and implemented custom post types to handle different products and gallery images. This is actually a pretty common flow in my projects. But each time I get faster, more modular, more thorough, and gain a more complete understanding of the tools and techniques I’m using.</p><img src="http://kelleemartins.com/images/bluestar1.jpg" alt="Bluestar Products Page"></div>',
 			havLink: true,
 			link: 'https://www.bluestarcooking.com/',
 		},
@@ -76,9 +79,11 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sc
 			name: 'Hansen Orthodontics',
 			heroImage: 'images/projects/hansen.jpg',
 			text: '<p>Hansen Ortho was my first start to end project with my Zenman team. The entire site is actually constructed using Advanced Custom Field modules which allows the user to add multiple sections to create pages. The flexibility is amazing but making sure these modules worked in any combination on any page proved to be quite tricky.<br>I had quite a few modules that required a YouTube embed. This would break though if you had two embed modules on a page or even if a repeater within one module included a row that contained a YT embed. The YouTube API requires a unique ID that needed to be generated from each module and each row within each module. In each module file I create a random string that makes each module unique:</p>' + 
-				'<script src="https://gist.github.com/kellsbells/383b7b10bfc04428b824d5542a498628.js"></script>' + 
-				'<p>I then had to make each row within that module unique. I did by setting up a simple row counter:<br><script src="https://gist.github.com/kellsbells/c7e91dafcbe7cc047b751e45faf786b6.js"></script><br>In my JavaScript I then had to build an array of all the embeds for the YT API to map through and consume. I included some data attribute that can be set in the WP-Admin that dictate loop, autoplay and mute.</p>' +
-				'<script src="https://gist.github.com/kellsbells/e36a6898bdeb3db8415bdffc235dfc32.js"></script>',
+				$scope.gistOne + 
+				'<p>I then had to make each row within that module unique. I did by setting up a simple row counter:<br>' +
+				$scope.gistThree +
+				'<br>In my JavaScript I then had to build an array of all the embeds for the YT API to map through and consume. I included some data attribute that can be set in the WP-Admin that dictate loop, autoplay and mute.</p>' +
+				$scope.gistTwo,
 			havLink: true,
 			link: 'http://www.bracesbydrhansen.com/',
 		},
@@ -106,7 +111,7 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sc
 		{
 			name: 'Reebok',
 			heroImage: 'images/projects/reebok.jpg',
-			text: '<div><p><img class="alignnone size-medium wp-image-121" src="http://kelleemartins.com/wp-content/uploads/2016/07/jj-watt-desktop-new-2-123x300.jpg" alt="jj-watt-desktop-new-2" width="123" height="300" />-Bra Finder-Link Farm-lots of crazy code</p></div>',
+			text: '<div><img src="http://kelleemartins.com/images/reebok1.jpeg" alt="Reebok Shop Instagram Page"><p>-Bra Finder<br>-Reebok Shop Instagram Page</p></div>',
 			havLink: true,
 			link: 'http://www.reebok.com/us/women-sports_bras',
 		},
@@ -201,6 +206,14 @@ app.filter("sanitize", ['$sce', function($sce) {
         }
 }]);
 
+
+app.filter('renderHTMLCorrectly', function($sce) {
+	return function(stringToParse)
+	{
+		return $sce.trustAsHtml(stringToParse);
+	}
+});
+
 app.controller('AboutController', ['$scope', function($scope) {
 	$scope.about = 'Hi! My name is Kellee. I\'m so excited that you\'re here on my site! I am so passionate about what I do! If there\'s one thing I could convey on my portfolio it\'s that I truly love to code. I live to solve problems and build beautiful things. Web development allows me to touch the lives of people around the world, I just love that! I still have so much to learn, and always will, as I become the best web developer I can be. But if you\'re looking for someone who will work hard and have a positve attitude you\'ve come to the right place.';
 
@@ -221,7 +234,7 @@ app.controller('AboutController', ['$scope', function($scope) {
 		},
 		{
 			title: 'Angular',
-			icon: 'images/icons/angularjs.png',
+			icon: 'images/icons/angular.png',
 			heart: true,
 			learning: true,
 		},

@@ -7,8 +7,7 @@
   		<div class="project-title">
   			<h2>{{project.name}}</h2>
   		</div>
-  		<div class="project-text" ng-bind-html="project.text | sanitize">
-  		</div>
+      <div class="project-text" ng-bind-html="project.text"></div>
   		<div class="project-link" ng-if="project.havLink">
   			<a class="button" target="_blank" ng-href="{{project.link}}"><span>See it in the Wild!</span></a>
   		</div>

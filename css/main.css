@@ -71,6 +71,10 @@ a.button:hover:after {
 	position: relative;
 }
 
+.gists {
+	display: none;
+}
+
 
 /******************** NAVIGATION ********************/
 
@@ -160,7 +164,7 @@ a.button:hover:after {
     margin-left: -25px;
     font-size: 32px;
     text-align: center;
-    transition: all 400ms ease;
+    transition: background-color 900ms ease;
     cursor: pointer;
     animation: bounce 600ms infinite alternate;
   	-webkit-animation: bounce 600ms infinite alternate;
@@ -247,7 +251,7 @@ a.button:hover:after {
 }
 
 .about-view__icon {
-	width: 14%;
+	width: 33.33%;
 	position: relative;
 	padding: 10px 20px;
 	box-sizing: border-box;
@@ -256,11 +260,60 @@ a.button:hover:after {
 	align-items: center;
 }
 
+@media (min-width: 500px) {
+	.about-view__icon {
+		width: 25%;
+	}
+}
+
+@media (min-width: 800px) {
+	.about-view__icon {
+		width: 14%;
+	}
+}
+
 .about-view__icon img {
 	max-width: 100%;
 	opacity: 1;
 	cursor: pointer;
 	transition: all 400ms ease;
+	z-index: 0;
+}
+
+.about-view__icon.heart:before {
+    content: '❤';
+    width: 30px;
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    height: 29px;
+    border-radius: 300%;
+    background-color: #ff2362;
+    border: 1px solid #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    padding-top: 1px;
+    z-index: 1;
+}
+
+.about-view__icon.learning:after {
+	content: '⚒';
+    font-size: 26px;
+    padding-bottom: 2px;
+    width: 30px;
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    height: 28px;
+    border-radius: 100%;
+    background-color: #3e23ff;
+    border: 1px solid #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
 
 .about-view__icon:hover img {
@@ -274,26 +327,20 @@ a.button:hover:after {
 	background-color: rgba(255,255,255,1);
 	padding: 10px;
 	width: 100%;
+	z-index: 2;
 }
 
-.about-view__icon .heart {
-	width: 30px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	height: 30px;
-	border-radius: 300%;
-	background-color: red;
+.about-view .legend {
+	padding-top: 40px;
 }
 
-.about-view__icon .learning {
-	width: 30px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 30px;
-	border-radius: 100%;
-	background-color: blue;
+.about-view .legend .learning {
+	font-size: 22px;
+}
+
+
+.about-view .legend p {
+	margin: 0;
 }
 
 /******************** PROJECTS ********************/
@@ -415,6 +462,10 @@ a.button:hover:after {
 	padding: 15px 20px 40px;
 }
 
+#custom-modal img {
+	width: 100%;
+}
+
 .project-image img {
 	width: 100%;
 }
@@ -431,7 +482,6 @@ a.button:hover:after {
 .project-link a.button {
 	padding: 10px 20px;
 }
-
 
 #custom-modal .close {
 	padding: 12px 20px 15px;
@@ -575,7 +625,7 @@ a.button:hover:after {
 /******************** FOOTER ********************/
 
 footer {
-	padding: 20px 0;
+	padding: 10px 0;
 }
 .footer__logo {
 	display: flex;
