@@ -239,7 +239,7 @@ a.button:hover:after {
 }
 
 .about-view__text {
-	text-align: justify;
+	text-align: center;
 }
 
 .about-view h4 {
@@ -481,7 +481,7 @@ a.button:hover:after {
 }
 
 .project-text {
-	text-align: justify;
+	text-align: center;
 	padding: 10px 0 40px;
 }
 
