@@ -21,15 +21,16 @@ app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, project){
 });
 
 app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sce) {
-	$scope.gistOne = $('.gist-one').html();
-	$scope.gistTwo = $('.gist-two').html();
-	$scope.gistThree = $('.gist-three').html();
+	$scope.gistBoppy = $('.gist-boppy').html();
+	$scope.gistHansen1 = $('.gist-hansen-1').html();
+	$scope.gistHansen2 = $('.gist-hansen-2').html();
+	$scope.gistHansen3 = $('.gist-hansen-3').html();
 
     $scope.projects = [
         {
 			name: 'Adidas',
 			heroImage: 'images/projects/adidas.jpg',
-			text: '<div><p><img src="http://kelleemartins.com/images/alphabounce1.jpg" alt="AlphaBounce Desktop View"></p><p>quick turn around<br>360</p><p><img src="http://kelleemartins.com/images/alphabounce2.jpg" alt="AlphaBounce Mobile View"></p></div>',
+			text: '<div><img src="http://kelleemartins.com/images/alphabounce1.jpg" alt="AlphaBounce Desktop View"><p>quick turn around<br>360</p><img src="http://kelleemartins.com/images/alphabounce2.jpg" alt="AlphaBounce Mobile View"></div>',
 			havLink: false,
 			link: '',
 		},
@@ -43,14 +44,16 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sc
 		{
 			name: 'BlueStar Cooking',
 			heroImage: 'images/projects/bluestar.jpg',
-			text: '<div><p>I really enjoyed working on BlueStar! I was on the project from the very beginning which means I knew it inside out. That’s always an enjoyable experience, really makes you feel like you have a handle on things. I started off by building out the templates using HTML, CSS, and JavaScript. Then I brought in CMB2 to handle the custom content and implemented custom post types to handle different products and gallery images. This is actually a pretty common flow in my projects. But each time I get faster, more modular, more thorough, and gain a more complete understanding of the tools and techniques I’m using.</p><img src="http://kelleemartins.com/images/bluestar1.jpg" alt="Bluestar Products Page"></div>',
+			text: '<div><p>I really enjoyed working on BlueStar! I was on the project from the very beginning which means I knew it inside out. That’s always an enjoyable experience, really makes you feel like you have a handle on things. I started off by building out the templates using HTML, CSS, PHP and JavaScript. Then I brought in CMB2 to handle the custom content and implemented custom post types to handle different products and gallery images. This is actually a pretty common flow in my projects. But each time I get faster, more modular, more thorough, and gain a more complete understanding of the tools and techniques I’m using.</p><img src="http://kelleemartins.com/images/bluestar1.jpg" alt="Bluestar Products Page"></div>',
 			havLink: true,
 			link: 'https://www.bluestarcooking.com/',
 		},
 		{
 			name: 'Boppy',
 			heroImage: 'images/projects/boppy.jpg',
-			text: '<div><p>Cookie</p></div>',
+			text: '<div><p>Boppy is actually a WordPress site but is using Nodus to handle the e-commerce. Getting these two to speak to each other required a lot of really creative development from my team. Most of my edits have been minor but my favorite was setting a cookie for the cart icon in the utility navigation. If something is added to the cart on the Nodus (ecomm) side than the product count in the cart will persist on the WordPress side.</p>' + 
+				$scope.gistBoppy + 
+				'</div>',
 			havLink: true,
 			link: 'http://www.boppy.com/',
 		},
@@ -65,8 +68,8 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sc
 			name: 'FjallRaven',
 			heroImage: 'images/projects/fjallraven.jpg',
 			text: '<div><p>This project was my first exposure to Shopify and Liquid. I specifically built out the locations page and the current footer. Although, I’ve done little edits throughout the site.</p></div>',
-			havLink: true,
-			link: 'https://www.clearchoice.com/',
+			havLink: false,
+			link: '',
 		},
 		{
 			name: 'Friday Playlists – Voltage Ad',
@@ -79,11 +82,11 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sc
 			name: 'Hansen Orthodontics',
 			heroImage: 'images/projects/hansen.jpg',
 			text: '<p>Hansen Ortho was my first start to end project with my Zenman team. The entire site is actually constructed using Advanced Custom Field modules which allows the user to add multiple sections to create pages. The flexibility is amazing but making sure these modules worked in any combination on any page proved to be quite tricky.<br>I had quite a few modules that required a YouTube embed. This would break though if you had two embed modules on a page or even if a repeater within one module included a row that contained a YT embed. The YouTube API requires a unique ID that needed to be generated from each module and each row within each module. In each module file I create a random string that makes each module unique:</p>' + 
-				$scope.gistOne + 
+				$scope.gistHansen1 + 
 				'<p>I then had to make each row within that module unique. I did by setting up a simple row counter:<br>' +
-				$scope.gistThree +
+				$scope.gistHansen2 +
 				'<br>In my JavaScript I then had to build an array of all the embeds for the YT API to map through and consume. I included some data attribute that can be set in the WP-Admin that dictate loop, autoplay and mute.</p>' +
-				$scope.gistTwo,
+				$scope.gistHansen3,
 			havLink: true,
 			link: 'http://www.bracesbydrhansen.com/',
 		},
@@ -143,23 +146,11 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sc
 		  [62,35,255],
 		  [255,35,98]
 		);
-
-
 		var step = 0;
-		//color table indices for: 
-		// current color left
-		// next color left
-		// current color right
-		// next color right
 		var colorIndices = [0,1,2,3];
-
-		//transition speed
 		var gradientSpeed = 0.002;
-
 		function updateGradient() {
-		  
 			if ( $===undefined ) return;
-		  
 			var c0_0 = colors[colorIndices[0]];
 			var c0_1 = colors[colorIndices[1]];
 			var c1_0 = colors[colorIndices[2]];
@@ -186,32 +177,13 @@ app.controller('ProjectController', function($scope, $timeout, $modal, $log, $sc
 		    step %= 1;
 		    colorIndices[0] = colorIndices[1];
 		    colorIndices[2] = colorIndices[3];
-		    
-		    //pick two new target color indices
-		    //do not pick the same as the current one
 		    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
 		    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-		    
 		  }
 		}
-
 		setInterval(updateGradient,10);
 	};
 
-});
-
-app.filter("sanitize", ['$sce', function($sce) {
-        return function(htmlCode){
-            return $sce.trustAsHtml(htmlCode);
-        }
-}]);
-
-
-app.filter('renderHTMLCorrectly', function($sce) {
-	return function(stringToParse)
-	{
-		return $sce.trustAsHtml(stringToParse);
-	}
 });
 
 app.controller('AboutController', ['$scope', function($scope) {

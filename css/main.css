@@ -242,12 +242,16 @@ a.button:hover:after {
 	text-align: justify;
 }
 
+.about-view h4 {
+	margin-bottom: 0;
+}
+
 .about-view__icons {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	padding-top: 40px;
+	padding-top: 30px;
 }
 
 .about-view__icon {
@@ -282,7 +286,7 @@ a.button:hover:after {
 
 .about-view__icon.heart:before {
     content: '❤';
-    width: 30px;
+    width: 29px;
     position: absolute;
     bottom: 5px;
     left: 15px;
@@ -294,15 +298,16 @@ a.button:hover:after {
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    padding-top: 1px;
+    padding-top: 2px;
     z-index: 1;
+    padding-left: 2px;
 }
 
 .about-view__icon.learning:after {
 	content: '⚒';
     font-size: 26px;
-    padding-bottom: 2px;
-    width: 30px;
+    padding-bottom: 3px;
+    width: 29px;
     position: absolute;
     bottom: 5px;
     right: 15px;
@@ -314,6 +319,7 @@ a.button:hover:after {
     align-items: center;
     justify-content: center;
     z-index: 1;
+    padding-left: 2px;
 }
 
 .about-view__icon:hover img {
